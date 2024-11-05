@@ -119,6 +119,10 @@ include './header.php';
     border-radius: 10;
     margin-left: 26px;
 }
+
+@media (max-width:393px){
+  
+}
 </style>
 <!-- Carousel Silde -->
 

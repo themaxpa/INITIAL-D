@@ -21,15 +21,28 @@ include '../Vendor/VendorHeader.php';
   .card {
     margin-bottom: 25px;
   }
-  #social-links{
-    color:black;
-   padding-left: 71px;
+
+  #social-links {
+    color: black;
+    padding-left: 71px;
   }
-  #social-link{
+
+  #social-link {
     margin: 0px 15px;
-    color:black;
+    color: black;
     font-size: 24px;
   }
+
+  .col-xl-8 {
+    margin-left: 853px;
+    width: 605px;
+  }
+  
+  .card {
+    margin-top: 5px;
+    margin-bottom: 25px;
+  
+}
 </style>
 
 <?php
@@ -49,17 +62,17 @@ if ($data->num_rows > 0) {
             <h2 style="margin-left: 10px;"><?php echo  $row["name"]; ?></h2>
 
             <div id="social-links" class="social-links mt-2">
-              <a  id="social-link" href="<?php echo  $row["x"]; ?>" id="social-links" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a  id="social-link" href="<?php echo  $row["facebook"]; ?>" id="social-links" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a  id="social-link" href="<?php echo  $row["instagram"]; ?>" id="social-links" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a  id="social-link" href="<?php echo  $row["linkedin"]; ?>" id="social-links" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              <a id="social-link" href="<?php echo  $row["x"]; ?>" id="social-links" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a id="social-link" href="<?php echo  $row["facebook"]; ?>" id="social-links" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a id="social-link" href="<?php echo  $row["instagram"]; ?>" id="social-links" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a id="social-link" href="<?php echo  $row["linkedin"]; ?>" id="social-links" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
         </div>
 
       </div>
 
-      <div class="col-xl-8" style="margin-left: 605px;width: 613px;">
+      <div class="col-xl-8">
 
         <div class="card">
           <div class="card-body pt-3">
@@ -259,7 +272,7 @@ if ($data->num_rows > 0) {
                     </div>
                   </div>
 
-                
+
 
                   <div class="text-center">
                     <button type="submit" name="submit" class="btn btn-primary">Save Changes</button>
@@ -290,7 +303,7 @@ if ($data->num_rows > 0) {
                 @$facebook = $_POST['facebook'];
                 @$x = $_POST['x'];
                 @$linkedin = $_POST['linkedin'];
-                @$company_licens= $_POST['company_licens'];
+                @$company_licens = $_POST['company_licens'];
 
                 $up = "UPDATE `vendor_registration` SET `image`='$filename',`name`='$name', `email`='$email',`phone`='$phone',`address`='$address',`country`='$country',`company_name`='$companyname',`about`='$about',`instagram`='$instagram',`facebook`='$facebook',`x`='$x',`linkedin`='$linkedin',`company_licens`='$company_licens'  WHERE `vendor_id`='$rid'";
                 // echo $up;

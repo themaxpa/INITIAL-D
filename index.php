@@ -33,9 +33,10 @@ include './connection/dbconnection.php';
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" type="text/css" rel="stylesheet">
   <style>
-    body{
-      cursor: url("./assets/img/Cursor/cursor.png"),auto;
+    body {
+      cursor: url("./assets/img/Cursor/cursor.png"), auto;
     }
+
     .header-app {
       position: relative;
       margin-top: 70px;
@@ -45,14 +46,16 @@ include './connection/dbconnection.php';
       justify-content: center;
       height: 10vh;
     }
+
     .id-card-body {
-    padding-left: 15px;
-    width: auto;
-    height: 349px;
-    color: #fff;
-    background-color: #20232b;
-    border-radius: 0px 0px 15px 15px;
-}
+      padding-left: 15px;
+      width: auto;
+      height: 349px;
+      color: #fff;
+      background-color: #20232b;
+      border-radius: 0px 0px 15px 15px;
+    }
+
     .wwa {
       display: none;
     }
@@ -114,71 +117,72 @@ include './connection/dbconnection.php';
     }
 
     .carousel-bx31 {
-    transform: skew(-20deg);
-    background-color: transparent;
-    border: 1px #fff solid;
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 900;
-    height: 45px;
-    width: 205px;
-    text-transform: uppercase;
-    padding: 13px 5px;
-    border-radius: 10px;
-    margin-left: 15px;
-}
+      transform: skew(-20deg);
+      background-color: transparent;
+      border: 1px #fff solid;
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 900;
+      height: 45px;
+      width: 205px;
+      text-transform: uppercase;
+      padding: 13px 5px;
+      border-radius: 10px;
+      margin-left: 15px;
+    }
 
-/* Search input */ 
-.input-container {
-    position: relative;
-    margin: 50px auto;
-    width: 130px;
-}
+    /* Search input */
+    .input-container {
+      position: relative;
+      margin: 50px auto;
+      width: 130px;
+    }
 
-.input-container input[type="text"] {
-  font-size: 20px;
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #fff;
-  padding: 5px 0;
-  background-color: transparent;
-  outline: none;
-}
+    .input-container input[type="text"] {
+      font-size: 20px;
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #fff;
+      padding: 5px 0;
+      background-color: transparent;
+      outline: none;
+    }
 
-.input-container .label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #fff;
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
+    .input-container .label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
 
-.input-container input[type="text"]:focus ~ .label,
-.input-container input[type="text"]:valid ~ .label {
-  top: -20px;
-  font-size: 16px;
-  color: #ee244e;
-}
+    .input-container input[type="text"]:focus~.label,
+    .input-container input[type="text"]:valid~.label {
+      top: -20px;
+      font-size: 16px;
+      color: #ee244e;
+    }
 
-.input-container .underline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background-color: #ee244e;
-  transform: scaleX(0);
-  transition: all 0.3s ease;
-}
+    .input-container .underline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #ee244e;
+      transform: scaleX(0);
+      transition: all 0.3s ease;
+    }
 
-.input-container input[type="text"]:focus ~ .underline,
-.input-container input[type="text"]:valid ~ .underline {
-  transform: scaleX(1);
-}
-/* End search */
+    .input-container input[type="text"]:focus~.underline,
+    .input-container input[type="text"]:valid~.underline {
+      transform: scaleX(1);
+    }
+
+    /* End search */
 
     .title-h1 {
       margin: 60px 0 10px 0;
@@ -189,19 +193,20 @@ include './connection/dbconnection.php';
     }
 
     .all-tracks-btn {
-    border-radius: 10px;
-    background: transparent;
-    transform: skew(-20deg);
-    color: #fff;
-    border: 1px solid #fff;
-    width: 200px;
-    height: 45px;
-    margin: 20px 0px 0px 240px;
-    padding: 10px 18px;
-    font-size: 17px;
-    font-weight: 900;
-    text-transform: uppercase;
-}
+      border-radius: 10px;
+      background: transparent;
+      transform: skew(-20deg);
+      color: #fff;
+      border: 1px solid #fff;
+      width: 200px;
+      height: 45px;
+      margin: 20px 0px 0px 240px;
+      padding: 10px 18px;
+      font-size: 17px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
     .ppp {
       padding-left: 50px;
     }
@@ -234,10 +239,11 @@ include './connection/dbconnection.php';
     .phone-carousel {
       display: none;
     }
-.ph-login{
-  display: none;
-}
- 
+
+    .ph-login {
+      display: none;
+    }
+
 
     /* Media Query =====================================================================================================================================
 ===================================================================================================================================================*/
@@ -249,10 +255,12 @@ include './connection/dbconnection.php';
         padding-left: 0px;
         padding-top: 15px;
       }
-.ph-login{
-  display: flex;
-  margin-left: 15px;
-}
+
+      .ph-login {
+        display: flex;
+        margin-left: 15px;
+      }
+
       /* carousel */
       .desktop-carousel {
         display: none;
@@ -531,11 +539,13 @@ include './connection/dbconnection.php';
         font-size: 10px;
         padding: 5px;
       }
+
       .social p {
         font-size: 5px;
         margin-right: 0px;
       }
-/* End footer */
+
+      /* End footer */
 
 
 
@@ -602,9 +612,9 @@ include './connection/dbconnection.php';
                 </ul>
               </li>
               <div class="ph-login">
-              <li><a href="./account.php" class="account-btn">Login</a></li>
+                <li><a href="./account.php" class="account-btn">Login</a></li>
               </div>
-                        </ul>
+            </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
           <a href="./account.php" class="account-btn" style=" font-size:30px">
@@ -637,21 +647,21 @@ include './connection/dbconnection.php';
           </div>
           <h2 style=" font-family:myFont;">Search. Book. Drive. Repeat</h2>
         </div>
-        <div class="search-bar">
+        <!-- <div class="search-bar">
           <div class="items4">
-      
-<div class="input-container">
-  <input type="text" id="input" required="">
-  <label for="input" class="label">Search</label>
-  <div class="underline"></div>
-</div>
+
+            <div class="input-container">
+              <input type="text" id="input" required="">
+              <label for="input" class="label">Search</label>
+              <div class="underline"></div>
+            </div>
 
             <div class="search-bar-items"><sub>Event types</sub></div>
             <div class="search-bar-items"><sub>Vehicle types </sub></div>
             <div class="search-bar-items"><sub>Dates </sub></div>
             <div class="search-icon"><i class="fas fa-search"></i></div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section><!-- End Hero -->
@@ -1115,7 +1125,7 @@ include './connection/dbconnection.php';
   <!-- End Footer -->
   <div id="preloader"> </div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center" style="background-color:#ee244b;"><i class="bi bi-arrow-up-short"></i></a>
- 
+
 
 
 

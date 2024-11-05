@@ -22,7 +22,10 @@ include './UserHeader.php';
 
   .card {
     margin-bottom: 25px;
-  }
+    background: transparent;
+    backdrop-filter: blur(80px);
+    color: #fff;
+}
 
   #social-links {
     color: black;

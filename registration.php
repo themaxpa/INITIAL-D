@@ -1,274 +1,97 @@
 <?php
 session_start();
 include './connection/dbconnection.php';
-include './header.php';
 ?>
-<link href="assets/css/style.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <style>
-        * {
-            color: #fff;
-        }
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        #herox {
-            background-image: url('./assets/img/REG-img.jpg');
-            height: 600px;
-            background-size: cover;
-        }
+    <title>Initial D</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-        .reg-container {
-            margin-bottom: 30px;
-        }
-
-        .registration-container h1 {
-            margin: 200px 0 10px 0;
-            font-size: 70px;
-            font-weight: 700;
-            line-height: 86px;
-            color: #fff;
-        }
-        .registration-container h2 {
-    font-family: myFont;
-    font-size: 25px;
-    color: bisque;
-    margin: 10px 312px 20px 5px;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 100%;
-    width: 100%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 20px;
-    position: relative;
-    margin-bottom: 50px;
-}
-        .title-ph {
-            font-family: myFont;
-            font-size: 28px;
-            color: #ee244e;
-            font-weight: 300;
-            letter-spacing: -1px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding-left: 30px;
-        }
-
-        .title-ph::before,
-        .title-ph::after {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            left: 0px;
-            background-color: #20232b;
-        }
-
-        .title-ph::before {
-            width: 18px;
-            height: 18px;
-            background-color: #ee244b;
-        }
-
-        .title-ph::after {
-            width: 18px;
-            height: 18px;
-            animation: pulse 1s linear infinite;
-        }
-
-        .message,
-        .signin {
-            color: rgba(88, 87, 87, 0.822);
-            font-size: 14px;
-        }
-
-        .signin {
-            text-align: center;
-        }
-
-        .signin a {
-            color: #ee244e;
-        }
-
-        .signin a:hover {
-            text-decoration: underline #20232b;
-        }
-
-        .flex {
-            display: flex;
-            width: 100%;
-            gap: 6px;
-        }
-
-        .form label {
-            position: relative;
-        }
-
-        .form label .input {
-            width: 100%;
-            padding: 10px 10px 20px 10px;
-            outline: 0;
-            border: 1px solid rgba(105, 105, 105, 0.397);
-            border-radius: 10px;
-            color: #20232b;
-        }
-
-        .form label .input+span {
-            position: absolute;
-            left: 10px;
-            top: 15px;
-            color: grey;
-            font-size: 0.9em;
-            cursor: text;
-            transition: 0.3s ease;
-        }
-
-        .form label .input:placeholder-shown+span {
-            top: 15px;
-            font-size: 0.9em;
-        }
-
-        .form label .input:focus+span,
-        .form label .input:valid+span {
-            top: 30px;
-            font-size: 0.7em;
-            font-weight: 600;
-        }
-
-        .form label .input:valid+span {
-            color: green;
-        }
-
-        .submit {
-            border: none;
-            outline: none;
-            background-color: #ee244e;
-            padding: 10px;
-            border-radius: 10px;
-            color: #fff;
-            font-size: 16px;
-            transform: .3s ease;
-        }
-
-        .submit:hover {
-            background-color: rgb(56, 90, 194);
-        }
-
-        @keyframes pulse {
-            from {
-                transform: scale(0.9);
-                opacity: 1;
-            }
-
-            to {
-                transform: scale(1.8);
-                opacity: 0;
-            }
-        }
-
-        /* End form */
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 
-        /* Media Query 393 */
-        @media (max-width:393px) {
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-            /* form  */
-            .form {
-                margin-top: 50px;
-            }
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/popup.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/login.css" type="text/css" rel="stylesheet">
 
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+        <div class="container-fluid">
 
-            .registration-container {
-                margin-top: -90px;
-                ;
-            }
+            <div class="row justify-content-center">
+                <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
+                    <a href="index.php" class="logo me-auto me-lg-0"><img src="assets/img/D LOGO.png" alt="" class="img-fluid" style=" max-height: 70px;"></a>
 
-            .registration-container h1 {
-                margin: 10px -30px;
-                font-size: 33px;
-                font-weight: 700;
-                line-height: 86px;
+                    <nav id="navbar" class="navbar order-last order-lg-0">
+                        <ul>
+                            <li><a class="nav-link scrollto active" href="./TrackDay.php">Track Days</a></li>
+                            <li><a class="nav-link scrollto" href="./Organizer.php">Organizer</a></li>
+                            <li><a class="nav-link scrollto" href="./RacingTeam.php">Racing Team</a></li>
+                            <li><a class="nav-link scrollto " href="./CorporateEvent.php">Corporate Event</a></li>
+                            <li class="dropdown"><a href="#"><span>Registration</span> <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="./registration.php">user</a></li>
+                                    <li><a href="./VendorRegistration.php">Organizer</a></li>
+                                    <ul>
+                                    </ul>
+                            </li>
+                        </ul>
+                        </li>
+                        <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+                        </ul>
+
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                    </nav><!-- .navbar -->
+                    <a href="./account.php" class="account-btn" style=" font-size:30px">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header><!-- End Header col-xl-8 -->
+
+    <head>
+        <style>
+            * {
                 color: #fff;
             }
 
-            .registration-container h2 {
-                font-family: myFont;
-                font-size: 9px;
-                color: bisque;
-                margin: -23px 110px 20px -30px;
-            }
 
-            .REG-container {
-
-                display: block;
-            }
-
-
-            #herox {
-                height: 800px;
+            .containerX {
+                background-image: url('./assets/img/REG-img.jpg');
+                height: 600px;
                 background-size: cover;
-            }
-
-            .info-h6 {
-                font-size: 10px;
             }
 
             .reg-container {
-                margin: 0px 0px 0px 0px;
-            }
-
-
-            /* footer */
-            .bottom-nav-list li {
-                display: none;
-            }
-
-            .news-letter1 {
-                color: #fff;
-                height: 5vh;
-                border-radius: 5px 0px 0px 5px;
-                background-color: #20232b;
-                border: solid 1px #fff;
-            }
-
-            .news-letter2 {
-                color: #fff;
-                height: 5vh;
-                width: 70px;
-                border-radius: 0px 5px 5px 0px;
-                background-color: #ee244e;
-                border: solid 1px #fff;
-                font-size: 10px;
-                padding: 5px;
-            }
-
-            .social p {
-                font-size: 5px;
-                margin-right: 0px;
-            }
-
-            /* End footer*/
-
-        }
-
-        @media (max-width:1440px) {
-            #herox {
-                height: 600px;
-                background-size: cover;
-                background-image: url('./assets/img/phone393/ph6.jpg');
-                opacity: 0.8;
+                margin-bottom: 30px;
             }
 
             .registration-container h1 {
-                margin: 120px 0px 10px -25px;
-                font-size: 33px;
+                margin: 200px 0 10px 0;
+                font-size: 70px;
                 font-weight: 700;
                 line-height: 86px;
                 color: #fff;
@@ -276,54 +99,193 @@ include './header.php';
 
             .registration-container h2 {
                 font-family: myFont;
-                font-size: 12px;
+                font-size: 25px;
                 color: bisque;
-                margin: -25px 88px 174px -25px;
+                margin: 10px 312px 20px 5px;
             }
 
-            #herox {
-                height: 800px;
-                background-size: cover;
-            }
-
-            .reg-contaniner {
+            .form {
                 display: flex;
+                flex-direction: column;
+                gap: 10px;
+                max-width: 100%;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 20px;
+                position: relative;
+                margin-bottom: 50px;
             }
 
-            .REG-container {
-                display: none;
+            .title-ph {
+                font-family: myFont;
+                font-size: 28px;
+                color: #ee244e;
+                font-weight: 300;
+                letter-spacing: -1px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding-left: 30px;
             }
 
-            /* footer */
-            .news-letter1 {
-                color: #fff;
-                height: 8vh;
-                width: 250px;
-                border-radius: 5px 0px 0px 5px;
+            .title-ph::before,
+            .title-ph::after {
+                position: absolute;
+                content: "";
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                left: 0px;
                 background-color: #20232b;
-                border: solid 1px #fff;
             }
 
-            .news-letter2 {
-                color: #fff;
-                height: 8vh;
-                border-radius: 0px 5px 5px 0px;
+            .title-ph::before {
+                width: 18px;
+                height: 18px;
+                background-color: #ee244b;
+            }
+
+            .title-ph::after {
+                width: 18px;
+                height: 18px;
+                animation: pulse 1s linear infinite;
+            }
+
+            .message,
+            .signin {
+                color: rgba(88, 87, 87, 0.822);
+                font-size: 14px;
+            }
+
+            .signin {
+                text-align: center;
+            }
+
+            .signin a {
+                color: #ee244e;
+            }
+
+            .signin a:hover {
+                text-decoration: underline #20232b;
+            }
+
+            .flex {
+                display: flex;
+                width: 100%;
+                gap: 6px;
+            }
+
+            .form label {
+                position: relative;
+            }
+
+            .form label .input {
+                width: 100%;
+                padding: 10px 10px 20px 10px;
+                outline: 0;
+                border: 1px solid rgba(105, 105, 105, 0.397);
+                border-radius: 10px;
+                color: #20232b;
+            }
+
+            .form label .input+span {
+                position: absolute;
+                left: 10px;
+                top: 15px;
+                color: grey;
+                font-size: 0.9em;
+                cursor: text;
+                transition: 0.3s ease;
+            }
+
+            .form label .input:placeholder-shown+span {
+                top: 15px;
+                font-size: 0.9em;
+            }
+
+            .form label .input:focus+span,
+            .form label .input:valid+span {
+                top: 30px;
+                font-size: 0.7em;
+                font-weight: 600;
+            }
+
+            .form label .input:valid+span {
+                color: green;
+            }
+
+            .submit {
+                border: none;
+                outline: none;
                 background-color: #ee244e;
-                border: solid 1px #fff;
+                padding: 10px;
+                border-radius: 10px;
+                color: #fff;
+                font-size: 16px;
+                transform: .3s ease;
             }
 
-            .bottom-nav-list a {
-                display: none;
+            .submit:hover {
+                background-color: rgb(56, 90, 194);
             }
 
-            /* End footer */
-        }
-    </style>
-</head>
+            @keyframes pulse {
+                from {
+                    transform: scale(0.9);
+                    opacity: 1;
+                }
+
+                to {
+                    transform: scale(1.8);
+                    opacity: 0;
+                }
+            }
+
+            /* End form */
+
+            @media (max-width:394px) {
+
+                .message,
+                .signin {
+                    color: gray;
+                    font-size: 14px;
+                }
+
+                .containerX,
+                .REG-container,
+                .bottom-nav-list {
+                    display: none;
+                }
+
+                body {
+                    background-image: url('./assets/img/phone393/ph8.jpg');
+                    height: 100%;
+                    background-size: cover;
+                    background-repeat:no-repeat;
+                    object-fit: cover;
+                    backdrop-filter: blur(30px);
+                }
+
+                .form {
+                    margin-top: 40px;
+                    background: transparent;
+                }
+
+                .footer {
+                    display: none;
+                }
+
+                .reg-contaniner {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        </style>
+    </head>
 
 <body style="overflow-x: hidden;">
     <section class="d-flex flex-column justify-content-center" id="herox">
-        <div class="container">
+        <div class="containerX">
             <div class="row justify-content-center">
                 <div class="registration-container">
                     <h1>
@@ -382,10 +344,10 @@ include './header.php';
 
                 <div class="flex">
                     <label>
-                        <select  required placeholder="" class="input" name="gender">
-                            <option  style="background-color: #ee244e; color:#20232b" value="male">Male</option>
-                            <option  style="background-color: #ee244e; color:#20232b" value="female">Female</option>
-                            <option  style="background-color: #ee244e; color:#20232b" value="Rather not say">Rather not say</option>
+                        <select required placeholder="" class="input" name="gender">
+                            <option style="background-color: #ee244e; color:#20232b" value="male">Male</option>
+                            <option style="background-color: #ee244e; color:#20232b" value="female">Female</option>
+                            <option style="background-color: #ee244e; color:#20232b" value="Rather not say">Rather not say</option>
 
                         </select>
                         <span>Gender</span>
@@ -393,12 +355,12 @@ include './header.php';
                 </div>
 
                 <label>
-                    <input required="" placeholder="" type="text" class="input" name="licens">
+                    <input required="" placeholder="" type="number" class="input" name="licens" maxlength="16">
                     <span>Licens Number</span>
                 </label>
 
                 <label>
-                    <input required="maximum limit 13 digit" placeholder="" type="text" class="input" name="ph">
+                    <input required="" maxlength="10" placeholder="" type="number" class="input" name="ph">
                     <span>Phone</span>
                 </label>
 
@@ -419,11 +381,103 @@ include './header.php';
     </div>
     <!--======================================================== End Phone 393======================================================================= -->
 
+
+    <!--Subscribe Box-->
+    <header>
+        <nav>
+            <ul class="bottom-nav-list">
+                <li><a href="#">How it<br>works</a></li>
+                <li><a href="./AdvantagesOrganizer.php">advantages<br>Organizer</a></li>
+                <li><a href="./AdvantagesCircuits.php">advantages<br>Circuits</a></li>
+                <li><a href="./AffiliateProgram.php">Affiliate<br>Program</a></li>
+                <li><a href="./OurPartner.php">Our<br>partner</a></li>
+
+                <form class="main-sub-email-box" action="./index.php" method="post">
+                    <div class="sub-email-box">
+                        <input type="email" class="news-letter1" placeholder="     newsletter@initial-D" style="padding-left: 10px;" required>
+                    </div>
+                    <div class="sub-email-box">
+                        <button type="submit" class="news-letter2">Subscribe</button>
+                    </div>
+                </form>
+            </ul>
+        </nav>
+    </header> <!--End Subscribe Box-->
+
+    <!-- ======= Footer ======= -->
+    <footer class="footer" style="padding: 70px 10px 0px 10px;">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="./HowWeWork.php">how we work</a></li>
+                        <li><a href="./OurResponsibility.php">Our responsibility</a></li>
+                        <li><a href="./PageNotFound.php">Our team & investors</a></li>
+                        <li><a href="./Career.php">Career</a></li>
+                        <li><a href="./News.php">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SERVICES</h4>
+                    <ul>
+                        <li><a href="./Sustainability.php">Sustainability</a></li>
+                        <li><a href="#">FAQ/Help</a></li>
+                        <li><a href="./Terms&Conditions.php">Terms & conditions</a></li>
+                        <li><a href="./Privacy&Policy.php">Privacy & policy</a></li>
+                        <li><a href="./Imprint.php">Imprint</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>OUR OFFICES</h4>
+                    <ul>
+                        <li><a href="#">Rankestraße 6a, D-80796 Munich</a></li>
+                        <li><a href="#">Merkurring 82, D-22143 Hamburg</a></li>
+                        <li><a href="#">Pascalstraße 6, D-52076 Aachen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACT US</h4>
+                    <ul>
+                        <li><a href="#">+49-89-2154-7279-0</a></li>
+                        <li><a href="#">+49-1579-239 18 23</a></li>
+                        <li><a href="./ContactUs.php">InitialD.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social" style="  width: 100%; display: flex; justify-content: end; margin-top:50px">
+                <p style="color:gray; margin-right:250px;">Initial D Booking &copy;2024. All rights reserved. Designed & Developed by <span class="designer">themaxpa</span>
+                </p>
+                <a href="https://x.com/?lang=en-in" style="margin: 0px 20px;"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.facebook.com/" style="margin: 0px 20px;"><i class=" bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/themaxpa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" style="margin: 0px 20px;"><i class=" bi bi-instagram"></i></a>
+                <a href="https://in.linkedin.com/" style="margin: 0px 20px;"><i class=" bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End Footer -->
+    <div id="preloader"> </div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center" style="background-color:#ee244b;"><i class="bi bi-arrow-up-short"></i></a>
+
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/script.js"></script>
+
 </body>
 
-<?php
-include './footer.php';
-?>
+</html>
+
+
 
 
 <?php

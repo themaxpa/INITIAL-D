@@ -200,10 +200,10 @@ height: 5vh;
                   </li>
                   <li><a href="#">NASCAR</a></li>
                   <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="../AllTracks.php">All Tracks</a></li>
+                  <li><a href="./VendorAllTracks.php">All Tracks</a></li>
                 </ul>
               </li>
-              <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+              <li><a class="nav-link scrollto" href="./VendorContactUs.php">Contact</a></li>
           </nav><!-- .navbar -->
         </div>
       </div>
