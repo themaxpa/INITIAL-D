@@ -8,7 +8,7 @@ include './connection/dbconnection.php';
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Initial Speed</title>
+  <title>Initial Dream</title>
   <meta content="We have a wide variety of race tracks" name="description">
   <meta content="race tracks,test days,motor bike trackdays" name="keywords">
 
@@ -547,35 +547,52 @@ include './connection/dbconnection.php';
 
       /* End footer */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+
+    
+    .pppT {
+      padding-left: 70px;
+      font-size: 20px;
+    }
+
+    .both-div {
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(100px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: 80%;
+      border-radius:20px;
+    }
+
+    .div1 {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .div1,
+    .div2 {
+      width: 50%;
+      height: 50vh;
+      /* border: 1px solid black; */
+      padding: 20px;
+    }
+
+    .div2 img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      border-radius: 20px;
+    }
+
+    .video-div2 {
+      width: 100%;
+      height: 100%;
+    }
+
+ 
+    
   </style>
 
 </head>
@@ -815,6 +832,26 @@ include './connection/dbconnection.php';
       <div class="index-sec-title">
         <h1 class="f-title">We aim to create new standards in the track day market</h1>
         <h4 class="f-sub-title">And keep them evolving</h4>
+          <!-- ======= all tracks Section ======= -->
+    <div class="all-tracks">
+      <div class="both-div">
+        <div class="div2">
+          <img src="./assets//img/slide3 (2).jpg">
+          <!-- <video class="video-div2" autoplay loop muted plays-inline>
+        <source src="./assets/video/GT Series Dolby Atmos Blancpain Zandvoort.mp4" type="video/mp4">
+        </video> -->
+        </div>
+        <div class="div1">
+          <div class="all-track-title">
+            <h3 class="h1-txt">Book your event dates with a few clicks</h3>
+          </div>
+          <div class="pppT">
+            <p class="p-txt">We offer a wide range of track day dates for cars and bikes, driving and riding experience as well as test days for racing teams. Easily bookable, independently from the corresponding organizer.</p>
+            <a href="./AllTracks.php" class="all-tracks-btn" style="margin: 0px;">All track days</a>
+          </div>
+        </div>
+      </div>
+    </div><!--=== End all tracks Section ===== -->
       </div>
   </section><!-- End filler -->
 

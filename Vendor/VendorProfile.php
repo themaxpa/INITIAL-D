@@ -37,12 +37,53 @@ include '../Vendor/VendorHeader.php';
     margin-left: 853px;
     width: 605px;
   }
-  
+
   .card {
     margin-top: 5px;
     margin-bottom: 25px;
-  
+
+  }
+
+  #row {
+    display: flex;
+    margin: 0px 0px 0px 900px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: baseline;
+    justify-content: flex-start;
+  }
+
+  #card {
+    margin-top: 140px;
+    margin-bottom: 10px;
+    margin-left: -52px;
+    width: 613px;
+  }
+
+  @media (max-width: 480px) {
+    #row {
+      display: flex;
+      margin: 0px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-content: center;
+      align-items: baseline;
+      justify-content: center;
+    }
+    #card {
+        margin-top: 140px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+    #social-link {
+    margin: -30px;
+    color: black;
+    font-size: 15px;
 }
+}
+
+
 </style>
 
 <?php
@@ -55,8 +96,8 @@ if ($data->num_rows > 0) {
     $rid = $row['vendor_id'];
 ?>
     <section class="SectionProfile">
-      <div class="row" style="display: flex;margin: 0px 0px 0px 900px;flex-wrap: nowrap;flex-direction: column;align-content: flex-end;align-items: baseline;justify-content: flex-start;">
-        <div class="card" style="margin-top: 140px; margin-bottom:10px; margin-left: -52px; width: 613px;">
+      <div id="row" class="row">
+        <div id="card" class="card">
           <div class="align-items-center card-body d-flex profile-card pt-4">
             <img style="width:40px;height:40px" src="./images/<?php echo $row['image']; ?>" alt="Profile" class="rounded-circle">
             <h2 style="margin-left: 10px;"><?php echo  $row["name"]; ?></h2>

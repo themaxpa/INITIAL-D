@@ -70,6 +70,15 @@ $data = mysqli_fetch_assoc($result);
     /*--------------------------------------------------------------
  card-D
 --------------------------------------------------------------*/
+    .id-card-body {
+      padding-left: 15px;
+      width: 100%;
+      height: 100%;
+      background-color: #424242;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
     #hero {
       background-image: url('../assets/img/herobg.png');
       background-size: cover;
@@ -131,29 +140,24 @@ $data = mysqli_fetch_assoc($result);
     }
 
     .addTrack {
-    width: 100%;
-    border-radius: 10px;
-    background-color: black;
-    /* border: 1px solid #fff; */
-    margin:20px 40px;
-}
+      width: 50%;
+      border-radius: 10px;
+      background-color: black;
+      /* border: 1px solid #fff; */
+      margin: 20px 40px;
+    }
 
     .addTrack h2 {
       margin-top: 20px;
     }
 
-    .TrackPreview {
-      width: 50%;
-      height: 100dvh;
-      border: 1px solid #fff;
-      /* background-color: #babcc5; */
-      /* border-radius: 50px 50px; */
-    }
+
 
     .filler {
       background-color: black;
       max-width: auto;
-      min-height: auto
+      min-height: auto;
+      /* height:50dvh; */
     }
 
     .index-sec-title {
@@ -179,11 +183,12 @@ $data = mysqli_fetch_assoc($result);
     }
 
     .add-container {
-    height:200vh;
-    display: flex;
-    width: 100%;
-    padding-left: 0px;
-}
+      height: 200vh;
+      display: flex;
+      width: 100%;
+      padding-left: 0px;
+    }
+
     .title-h1 {
       margin: 135px 0 10px 0;
       font-size: 90px;
@@ -256,7 +261,7 @@ $data = mysqli_fetch_assoc($result);
     /* From Uiverse.io by ammarsaa */
     .form {
       display: flex;
-      width:85%;
+      width: 100%;
       flex-direction: column;
       gap: 10px;
       padding: 20px;
@@ -394,6 +399,20 @@ $data = mysqli_fetch_assoc($result);
 
     /* End Form */
     @media (max-width:480px) {
+      .mobile-nav-toggle {
+        display: flex;
+      }
+
+
+      .mobile-nav-toggle {
+        color: #fff;
+        font-size: 28px;
+        cursor: pointer;
+        display: flex;
+        line-height: 0;
+        transition: 0.5s;
+      }
+
       #hero {
         background-image: url('../assets/img/phone393/ph7.jpg');
         background-size: cover;
@@ -412,8 +431,27 @@ $data = mysqli_fetch_assoc($result);
         font-size: 10px;
         line-height: 0px;
       }
+
+      .f-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border: 1px solid #fff;
+        font-size: 45px;
+        padding-top: 0;
+        padding-inline: 200px;
+      }
+
+      .filler {
+        background-color: black;
+        max-width: auto;
+        min-height: auto;
+        height: 100%;
+      }
     }
 
+    /* media Query end */
 
     .vendor-account {
       width: 50px;
@@ -433,7 +471,16 @@ $data = mysqli_fetch_assoc($result);
       color: #ee2;
     }
 
-  
+    .both-container {
+      display: flex;
+      border: 4px solid red;
+      height: 235vh;
+    }
+
+    .id-card--top-image-container{
+      border: 1px solid #fff;
+      height: 380px;
+    }
   </style>
 </head>
 
@@ -479,18 +526,18 @@ $data = mysqli_fetch_assoc($result);
               $result = mysqli_query($con, $dqry);
               if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                  $rid = $row['vendor_id'];
+                  $rid = @$row['vendor_id'];
               ?>
 
                   <li class="nav-item dropdown pe-3">
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                      <img class="vendor-account" src="./images/<?php echo $row['image']; ?>" alt="Profile" class="rounded-circle">
-                      <span class="d-none d-md-block dropdown-toggle ps-2" style="color:transparent"><?php echo  $row["name"]; ?></span></span>
+                      <img class="vendor-account" src="./images/<?php echo @$row['image']; ?>" alt="Profile" class="rounded-circle">
+                      <span class="d-none d-md-block dropdown-toggle ps-2" style="color:transparent"><?php echo  @$row["name"]; ?></span></span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" id="dropdown-ul-li">
                       <li class="dropdown-header">
-                        <h6><?php echo  $row["name"]; ?></h6>
+                        <h6><?php echo  @$row["name"]; ?></h6>
                         <!-- <span>Web Designer</span> -->
                       </li>
                       <li>
@@ -536,7 +583,7 @@ $data = mysqli_fetch_assoc($result);
                     <!-- End Profile Dropdown Items -->
                   </li><!-- End Profile Nav -->
             </ul>
-
+            <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
 
         </div>
@@ -550,7 +597,7 @@ $data = mysqli_fetch_assoc($result);
           <div class="row justify-content-center">
             <div class="title">
               <h1 class="title-h1">
-            <?php echo  $row["company_name"];
+            <?php echo  @$row["company_name"];
                 }
               } ?>
 
@@ -567,13 +614,16 @@ $data = mysqli_fetch_assoc($result);
   </div><!-- End Hero -->
   <!-- === filler ===-->
   <section>
-    <div class="filler" style="height:50dvh;">
+    <div class="filler">
       <div class="index-sec-title">
         <h1 class="f-title">We aim to create new standards in the track day market</h1>
         <h4 class="f-sub-title">And keep them evolving</h4>
 
       </div>
   </section><!-- End filler -->
+
+
+  <div class="both-container">
 
     <div class="addTrack">
       <!-- <h2 class="h1-txt"></h2> -->
@@ -584,16 +634,16 @@ $data = mysqli_fetch_assoc($result);
           <div class="reg-input">
             <!-- img upload -->
             <label>
-          <input class="input" type="file" name="image" placeholder="" required="">
-          <span>Track Name</span>
-        </label>
+              <input class="input" type="file" name="image" placeholder="" required="">
+              <span>Track Name</span>
+            </label>
           </div>
           <div class="form-instruction">
             <h3 calss="h1-txt"> Initial Dream</h3>
             <p></p>
           </div>
         </div>
-   
+
         <label>
           <input class="input" type="text" name="track_name" placeholder="" required="">
           <span>Track Name</span>
@@ -603,7 +653,7 @@ $data = mysqli_fetch_assoc($result);
           <input class="input" type="text" name="event" placeholder="" required="">
           <span>Event Name</span>
         </label>
-           
+
 
         <label>
           <input class="input" type="date" name="date" placeholder="" required="">
@@ -614,29 +664,29 @@ $data = mysqli_fetch_assoc($result);
           <input class="input" type="text" name="vehicle_type" placeholder="" required="">
           <span>Vehicle Type</span>
         </label>
-       
 
-   
-          <label>
-            <select id="opt" required placeholder="" class="input" name="category">
-              <option class="opt" value="Touring car racing">Touring car racing</option>
-              <option class="opt" value="Kart racing">Kart racing</option>
-              <option class="opt" value="Production-car racing">Production-car racing</option>
-              <option class="opt" value="Drag racing">Drag racing</option>
-              <option class="opt" value="Stock car racing">Stock car racing</option>
-              <option class="opt" value="Off-road racing">Off-road racing</option>
-              <option class="opt" value="Rallycross">Rallycross</option>
-              <option class="opt" value="Autocross">Autocross</option>
-              <option class="opt" value="Pickup truck racing">Pickup truck racing</option>
-              <option class="opt" value="Road racing">Road racing</option>
-              <option class="opt" value="Autocross">Autocross</option>
-              <option class="opt" value="Auto hillclimbing">Auto hillclimbing</option>
-              <option class="opt" value="Other categories">Other categories</option>
 
-            </select>
-            <span>Category</span>
-          </label>
-      
+
+        <label>
+          <select id="opt" required placeholder="" class="input" name="category">
+            <option class="opt" value="Touring car racing">Touring car racing</option>
+            <option class="opt" value="Kart racing">Kart racing</option>
+            <option class="opt" value="Production-car racing">Production-car racing</option>
+            <option class="opt" value="Drag racing">Drag racing</option>
+            <option class="opt" value="Stock car racing">Stock car racing</option>
+            <option class="opt" value="Off-road racing">Off-road racing</option>
+            <option class="opt" value="Rallycross">Rallycross</option>
+            <option class="opt" value="Autocross">Autocross</option>
+            <option class="opt" value="Pickup truck racing">Pickup truck racing</option>
+            <option class="opt" value="Road racing">Road racing</option>
+            <option class="opt" value="Autocross">Autocross</option>
+            <option class="opt" value="Auto hillclimbing">Auto hillclimbing</option>
+            <option class="opt" value="Other categories">Other categories</option>
+
+          </select>
+          <span>Category</span>
+        </label>
+
 
         <label>
           <input class="input" type="text" name="organizer" placeholder="" required="">
@@ -648,7 +698,7 @@ $data = mysqli_fetch_assoc($result);
           <span>Noise Level</span>
         </label>
 
-     
+
 
         <label>
           <input class="input" type="text" name="price" placeholder="" required="">
@@ -659,7 +709,7 @@ $data = mysqli_fetch_assoc($result);
           <input class="input" type="text" name="location" placeholder="                                    paste iframe here" required="">
           <span>Location</span>
         </label>
-        
+
         <label>
           <input class="input" type="text" name="track_length" placeholder="" required="">
           <span>Track Length</span>
@@ -705,7 +755,7 @@ $data = mysqli_fetch_assoc($result);
           <span>Total Turn</span>
         </label>
 
-        
+
         <label>
           <input class="input" type="file" name="bprint" placeholder="                                       Optional">
           <span>Track BluePrint</span>
@@ -748,7 +798,7 @@ $data = mysqli_fetch_assoc($result);
       $maxGrade = $_POST['max_grade'];
       $totalRace = $_POST['total_race'];
       @$totalTurn = $_POST['total_turn'];
-      
+
 
       $query = "INSERT INTO `tracks`(`vendor_id`,`image`,`track_name`,`event`,`date`,`vehicle_type`,`category`,`organizer`,`noise_level`,`price`,`location`,`track_length`,`track_width`,`total_area`,`vehicle_capacity`,`lap_timing`,`speed_sustainability`,`max_grade`,`total_race`,`total_turn`,`bprint`)
                              VALUES('$vendor_id','$filename','$trackName','$event','$date','$vehicleType','$category','$organizer','$noise_level','$price','$location','$trackLength','$trackWidth','$totalArea','$vehicleCapacity','$lapTiming','$speedSustainability','$maxGrade','$totalRace','$totalTurn','$bprint')";
@@ -773,114 +823,107 @@ $data = mysqli_fetch_assoc($result);
 
     if ($data->num_rows > 0) {
       while ($row = $data->fetch_assoc()) {
-        $uid = $row['vendor_id'];
+        $uid = @$row['vendor_id'];
     ?>
-       
-          <!--== Track===-->
-          <div class="card-D" style=" width: 100%; height:100%;" ;>
-            <div class="id-card--top-image-container">
-              <img style="border-radius:15px 15px 0px 0px; width: 370px; height: 200px;" loading="lazy" class="card-img-top" src="Vendor\images\<?php echo $row['image']; ?>" alt="Preview Image" />
-            </div>
-            <div class="id-card-body">
-              <div class="id-body-header">
 
-                <h5 class="portfolio-title header--title text-white">
-                  <?php echo  $row["track_name"]; ?>
-                </h5>
-                <p>
-                  <?php echo  $row["event"]; ?>
-                </p>
+    <?php
+      }
+    }
+    ?>
+
+
+    <!--== Track===-->
+    <div class="preview" style=" width: 50%; height:100%;">
+      <div class="previewCard">
+        <div class="id-card--top-image-container">
+          <img style="border-radius:15px 15px 0px 0px; width: 370px; height: 200px;" loading="lazy" class="card-img-top" src="Vendor\images\<?php echo @$row['image']; ?>" alt="Preview Image" />
+        </div>
+        <div class="id-card-body">
+          <div class="id-body-header">
+
+            <h5 class="portfolio-title header--title text-white">
+              <?php echo  @$row["track_name"]; ?>
+            </h5>
+            <p>
+              <?php echo  @$row["event"]; ?>
+            </p>
+          </div>
+          <div class="body">
+            <div class="row mt-4">
+              <div class="flex-columns">
+                <div class="col-12 flex-column p-0 pr-2">
+                  <div class="value start-date">
+                    <i class="bi bi-calendar2"></i>
+                    <?php echo  @$row["date"];  ?>
+                  </div>
+                </div>
               </div>
-              <div class="body">
-                <div class="row mt-4">
-                  <div class="flex-columns">
-                    <div class="col-12 flex-column p-0 pr-2">
-                      <div class="value start-date">
-                        <i class="bi bi-calendar2"></i>
-                        <?php echo  $row["date"];  ?>
-                      </div>
-                    </div>
+            </div>
+            <div class="row mt-2">
+              <div class="flex__columns">
+                <div class="col-12 flex-column p-0 pr-2">
+                  <div class="value">
+                    <i class="fa-solid fa-car"></i>
+                    <?php echo  @$row["vehicle_type"];  ?>
                   </div>
                 </div>
-                <div class="row mt-2">
-                  <div class="flex__columns">
-                    <div class="col-12 flex-column p-0 pr-2">
-                      <div class="value">
-                        <i class="fa-solid fa-car"></i>
-                        <?php echo  $row["vehicle_type"];  ?>
-                      </div>
-                    </div>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="flex__columns">
+                <div class="col-12 flex-column p-0 pr-2">
+                  <div class="value">
+                    <i class="bi bi-flag-fill"></i>
+                    <?php echo  @$row["category"];  ?>
                   </div>
                 </div>
-                <div class="row mt-2">
-                  <div class="flex__columns">
-                    <div class="col-12 flex-column p-0 pr-2">
-                      <div class="value">
-                        <i class="bi bi-flag-fill"></i>
-                        <?php echo  $row["category"];  ?>
-                      </div>
-                    </div>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="flex__columns">
+                <div class="col-12 flex-column p-0 pr-2">
+                  <div class="value">
+                    <i class="bi bi-building-fill"></i>
+                    <a rel="alternate" href="" hreflang="en">
+                      <?php echo  @$row["organizer"];  ?>
+                    </a>
                   </div>
                 </div>
-                <div class="row mt-2">
-                  <div class="flex__columns">
-                    <div class="col-12 flex-column p-0 pr-2">
-                      <div class="value">
-                        <i class="bi bi-building-fill"></i>
-                        <a rel="alternate" href="" hreflang="en">
-                          <?php echo  $row["organizer"];  ?>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mt-4">
-                  <div class="flex__columns">
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="flex__columns">
 
-                    <div class="col-6 flex-column p-0 pl-2">
-                      <div class="caption-text">
+                <div class="col-6 flex-column p-0 pl-2">
+                  <div class="caption-text">
 
-                      </div>
-                      <div class="value"><?php echo  $row["noise_level"];  ?></div>
-                    </div>
                   </div>
+                  <div class="value"><?php echo  @$row["noise_level"];  ?></div>
                 </div>
-                <div class="row mt-4">
-                  <div class="flex__columns">
-                    <div class="col-6 flex-column p-0 pr-2" style="margin:0px 0px 0px 65px;">
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="flex__columns">
+                <div class="col-6 flex-column p-0 pr-2" style="margin:0px 0px 0px 65px;">
 
-                      <div class="price">
-                        <a rel="alternate" class="track-price" href=" " hreflang="en">
-                          <button style="  width: 150px;height: 45px; font-weight: 900;font-size: 22px;     margin: -5px 0px 0px 120px;">
-                            <?php echo  $row["price"];  ?>
-                          </button>
-                        </a>
-                      </div>
-                    </div>
+                  <div class="price">
+                    <a rel="alternate" class="track-price" href=" " hreflang="en">
+                      <button style="  width: 150px;height: 45px; font-weight: 900;font-size: 22px;     margin: -5px 0px 0px 120px;">
+                        <?php echo  @$row["price"];  ?>
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-      <?php
-      }
-    }
-      ?>
-       
- 
-  
- 
-
-
-
-  <!-- === filler ===-->
-  <section>
-    <!-- <div class="filler" style="border:1px solid #fff"> -->
-    <div class="index-sec-title">
-      <h1 class="f-title">We aim to create new standards in the track day market</h1>
-      <h4 class="f-sub-title">And keep them evolving</h4>
+        </div>
+      </div>
     </div>
-  </section><!-- End filler -->
+  </div>
+
+
+
 
 
 

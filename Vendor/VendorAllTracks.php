@@ -100,7 +100,7 @@ if ($data->num_rows > 0) {
 
                                 <div class="price">
                                     <a rel="alternate" class="track-price" href=" " hreflang="en">
-                                        <button style="  width: 150px;height: 45px; font-weight: 900;font-size: 22px;     margin: -5px 0px 0px 120px;">
+                                        <button style="  width: 150px;height: 45px; font-weight: 900;font-size: 22px;  margin: -5px 0px 0px 120px;">
                                             <?php echo  $row["price"];  ?>
                                         </button>
                                     </a>

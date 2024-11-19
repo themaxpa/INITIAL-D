@@ -182,7 +182,25 @@
   font-size: 5px;
   margin-right: 0px;
 }
-
+.imprint-content {
+    padding: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 25px;
+    width: 100%;
+    height: 100dvh;
+}
+.imprint-content2 {
+    padding: 25px 0px 0px 20px;
+    margin: 0px 0px 0px 20px;
+    width: 80%;
+    height: 315dvh;
+}
+.pnf-error-box {
+    color: #fff;
+    width: 100%;
+    height: 30vh;
+    padding: 0px 15px 15px 0px;
+    margin-left: 55px;
+}
     }
   </style>
 </head>

@@ -1,9 +1,22 @@
+<?php
+session_start();
+include '../connection/dbconnection.php';
+@$uid = $_SESSION['login_id'];
+// echo $uid;
+
+$dqry = "SELECT * FROM `user_login` JOIN `user_registration` ON `user_login`.`reg_id`= `user_registration`.`reg_id` WHERE `login_id` = '$uid' ";
+$data = mysqli_query($con, $dqry);
+
+if ($data->num_rows > 0) {
+  while ($row = $data->fetch_assoc()) {
+    $rid = $row['reg_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <title>Admin HomePage</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -42,16 +55,20 @@
         <!-- Spinner End -->
 
 
-        <!-- Sign In Start -->
+        <!-- Sign Up Start -->
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <a href="index.html" class="">
+                            <a href="./AdminIndex.php" class="">
                                 <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
                             </a>
-                            <h3>Sign In</h3>
+                            <h3>Sign Up</h3>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe">
+                            <label for="floatingText">Username</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -68,13 +85,13 @@
                             </div>
                             <a href="">Forgot Password</a>
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
-                        <p class="text-center mb-0">Don't have an Account? <a href="">Sign Up</a></p>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
+                        <p class="text-center mb-0">Already have an Account? <a href="">Sign In</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Sign In End -->
+        <!-- Sign Up End -->
     </div>
 
     <!-- JavaScript Libraries -->
@@ -93,3 +110,4 @@
 </body>
 
 </html>
+<?php}}?>

@@ -3,7 +3,6 @@ include './connection/dbconnection.php';
 include './header.php';
 ?>
 <style>
-   
     .carousel-bx3 {
         border-radius: 10px;
         height: 55px;
@@ -33,11 +32,14 @@ include './header.php';
         padding: 13px 5px;
         border-radius: 10;
         margin-left: 26px;
+        width: 300px;
     }
-    .carousel-bx3:hover a{
+
+    .carousel-bx3:hover a {
         background-color: #fff;
         color: #20232b;
     }
+
     .carousel-bx31 {
         transform: skew(-20deg);
         background-color: transparent;
@@ -53,25 +55,31 @@ include './header.php';
         padding: 13px 5px;
         border-radius: 10px;
         margin-left: 15px;
+        width: 300px;
+        background-color: #ee244e;
     }
-    .carousel-bx31:hover a{
-       background-color: #ee2442;
+
+    .carousel-bx31:hover a {
+        background-color: #ee2442;
         color: #fff;
     }
+
     .P-txt {
         color: #fff;
         font-family: myFont !important;
         text-transform: uppercase;
     }
+
     .bottom-flex {
-            background-color:transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 10vh;
-        margin-top:-140px;
-        position:relative;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+        margin-top: -140px;
+        position: relative;
     }
+
     @media screen and (max-width: 2560px) {
         .header-app {
             background-color: #ee244e;
@@ -79,21 +87,21 @@ include './header.php';
             align-items: center;
             justify-content: center;
             height: 10vh;
-        margin-top:-140px;
-        position:relative;
+            margin-top: -140px;
+            position: relative;
+        }
     }
-}
 
-        .feature-rt {
-            background-color: #ee244e;
-            height: 95dvh;
-        }
+    .feature-rt {
+        background-color: #ee244e;
+        height: 95dvh;
+    }
 
-        .app-title {
-            padding-top: 0px;
-        }
+    .app-title {
+        padding-top: 0px;
+    }
 
-    
+
 
     @media screen and (max-width: 1189px) {
         .app-title {
@@ -216,13 +224,156 @@ include './header.php';
     }
 
     /* End animation */
-   
+
+    /* TEXT AREA */
+    .title-h1 {
+        margin: 60px 0 10px 0;
+        font-size: 70px;
+        font-weight: 700;
+        line-height: 86px;
+        color: #fff;
+    }
+
+    /* END */
+
+    @media screen and (max-width: 480px) {
+
+        .header-app {
+            display: none;
+        }
+
+        .title-h1 {
+            margin: 60px 0 10px 0;
+            font-size: 70px;
+            font-weight: 700;
+            line-height: 86px;
+            color: #fff;
+        }
+
+        .carousel-bx3 {
+            transform: skew(-20deg);
+            background-color: gray;
+            border: 1px #fff solid;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 900;
+            height: 45px;
+            width: 170px;
+            text-transform: uppercase;
+            padding: 13px 5px;
+            border-radius: 10px;
+            margin-left: 15px;
+            margin-left: 165px;
+        }
+        .carousel-bx3x {
+            transform: skew(-20deg);
+            background-color: gray;
+            border: 1px #fff solid;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 900;
+            height: 45px;
+            width: 170px;
+            text-transform: uppercase;
+            padding: 13px 5px;
+            border-radius: 10px;
+            margin-left: 15px;
+            margin-left: 165px;
+        }
+
+        .carousel-bx31 {
+            transform: skew(-20deg);
+            background-color: gray;
+            border: 1px #fff solid;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 900;
+            height: 45px;
+            width: 170px;
+            text-transform: uppercase;
+            padding: 13px 5px;
+            border-radius: 10px;
+            margin-left: 15px;
+            margin-left: 20px;
+        }
+        .carousel-bx31x {
+            transform: skew(-20deg);
+            background-color: gray;
+            border: 1px #fff solid;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 900;
+            height: 45px;
+            width: 170px;
+            text-transform: uppercase;
+            padding: 13px 5px;
+            border-radius: 10px;
+            margin-left: 15px;
+            margin-left: 20px;
+        }
+
+        .bottom-flex {
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10vh;
+            margin-top: -140px;
+            margin-right: -86px;
+            position: relative;
+        }
+
+        .heroDown-1-div {
+            width: 0%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .heroDown-1-div1,
+        .heroDown-2-div{
+            display: none;
+        }
+        .hero-down-section {
+        width: auto;
+        height: 0vh;
+        background-color: #20232b;
+        display: flex;
+    }
+    
+    #hero{
+        background-image: url('./assets/img/phone393/ph10.jpg'); 
+        background-size: cover;
+         height:80vh
+    }
+.svg-frame{
+    display: none;
+}
+    }
+    /* ========================== */
+    .btn2-con{
+        margin-top:50px;
+        margin-left:143px
+    }
+    #hero{
+        background-image: url('./assets/img/project-img/f1meter.jpg'); 
+        background-size: cover;
+         height:80vh
+    }
 </style>
 <section>
     <!-- Carousel Silde -->
     <!-- ======= Hero Section ======= -->
 
-    <section id="hero" class="d-flex flex-column justify-content-center" style="background-image: url('./assets/img/project-img/f1meter.jpg'); background-size: cover; height:80vh">
+    <section id="hero" class="d-flex flex-column justify-content-center">
         <div class="header-app" style="margin-top: 70px; position:relative">
             <div class="app-title">
                 <p class="p-txt" style="margin-top: 15px;">World's Best Track day app - Start your booking right!</p>
@@ -238,7 +389,7 @@ include './header.php';
         <div class="container">
             <div class="row justify-content-center">
                 <div class="title" style="display: flex;">
-                    <h1 class="title-h1" style="    margin: 60px 0 10px 0; font-size: 70px; font-weight: 700;line-height: 86px; color: #fff;">
+                    <h1 class="title-h1">
                         LOGIN TO CONTINUE YOURE BOOKING
                     </h1>
                     <!-- ANIMATION -->
@@ -294,21 +445,21 @@ include './header.php';
     </section><!-- End Hero -->
     <div class="hero-down-section">
         <div class="heroDown-1-div">
-            <div class="btn2-con" style="margin-top:50px;margin-left:143px">
+            <div class="btn2-con">
                 <!-- <img src="./assets/img/checkMark.png" style="width:40px;height:40px;"> -->
                 <!-- <h6 class="h1-txt" style="color:#ee244e">Thank you for the registration!</h6> -->
                 <!-- <p class="p-txt">Your account has been created and a verification email has been sent to your registered email<br>address. Please click on the verification link included in the email to activate your account.</p> -->
                 <div class="bottom-flex">
-                    <div class="carousel-bx3" style="width: 300px;">
+                    <div class="carousel-bx3">
                         <a href="./index.php">RETURN TO HOME PAGE</a>
                     </div>
-                    <div class="carousel-bx31" style="width: 300px;background-color:#ee244e">
+                    <div class="carousel-bx31">
                         <a href="./account.php" style="background-color:transparent">RETURN TO SIGNUP PAGE</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="heroDown-2-div">
+        <div class="heroDown-2-div">
             <div class="card-D" style="width: 325px;height: 490px;background-color: #ee244e;">
                 <div class="id-card-body" style="padding: 30px;">
                     <div class="id-body-header">
@@ -321,10 +472,10 @@ include './header.php';
 
                                     <div class="price" style="margin-top: 10px;">
                                         <a rel="alternate" class="track-price" href="./ContactUs.php" hreflang="en">
-                                            <div class="carousel-bx3">
+                                            <div class="carousel-bx3x">
                                                 <a href="https://www.apple.com/in/app-store/"><i class="bi bi-apple"></i> Download app store</a>
                                             </div>
-                                            <div class="carousel-bx31" style="margin-top: 15px;">
+                                            <div class="carousel-bx31x" style="margin-top: 15px;">
                                                 <a href="https://play.google.com/store/apps?hl=en_IN"><i class="bi bi-google-play"></i> Download Google Play</a>
                                             </div>
                                         </a>
@@ -335,7 +486,7 @@ include './header.php';
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
     <?php
     include './footer.php';

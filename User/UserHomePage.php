@@ -40,16 +40,555 @@ include '../connection/dbconnection.php';
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
   <link href="../assets/css/login.css4 " rel="stylesheet">
-<style>
- .id-card-body {
-    padding-left: 15px;
-    width: auto;
-    height: 349px;
-    color: #fff;
-    background-color: #20232b;
-    border-radius: 0px 0px 15px 15px;
-}
-  .header-app {
+  <style>
+    /* =========== */
+    #hero {
+      background-image: url('../assets/img/project-img/347842.jpg');
+      margin-top: 0px;
+    }
+
+    body {
+      cursor: url("./assets/img/Cursor/cursor.png"), auto;
+    }
+
+    .header-app {
+      position: relative;
+      margin-top: 70px;
+      background-color: #ee244e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 10vh;
+    }
+
+    .id-card-body {
+      padding-left: 15px;
+      width: auto;
+      height: 349px;
+      color: #fff;
+      background-color: #20232b;
+      border-radius: 0px 0px 15px 15px;
+    }
+
+    .wwa {
+      display: none;
+    }
+
+    .social {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      margin-top: 50px
+    }
+
+    .carousel-control-pre .carousel-control-prev-icon span {
+      background-color: transparent;
+    }
+
+    .items4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 160px;
+      gap: 20px;
+    }
+
+    .search-bar-items {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .carousel-bx3 {
+      border-radius: 10px;
+      height: 55px;
+      width: 235px;
+      padding-left: 20px;
+      padding-top: 15px;
+      font-size: 15px
+    }
+
+    .carousel-bx31 {
+      padding-top: 15px;
+      font-size: 12px;
+    }
+
+    .carousel-bx3 {
+      transform: skew(-20deg);
+      background-color: transparent;
+      border: 1px #fff solid;
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 900;
+      font-size: 12px;
+
+      height: 45px;
+      width: 185px;
+      text-transform: uppercase;
+      padding: 13px 5px;
+      border-radius: 10;
+      margin-left: 26px;
+    }
+
+    .carousel-bx31 {
+      transform: skew(-20deg);
+      background-color: transparent;
+      border: 1px #fff solid;
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 900;
+      height: 45px;
+      width: 205px;
+      text-transform: uppercase;
+      padding: 13px 5px;
+      border-radius: 10px;
+      margin-left: 15px;
+    }
+
+    /* Search input */
+    .input-container {
+      position: relative;
+      margin: 50px auto;
+      width: 130px;
+    }
+
+    .input-container input[type="text"] {
+      font-size: 20px;
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #fff;
+      padding: 5px 0;
+      background-color: transparent;
+      outline: none;
+    }
+
+    .input-container .label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .input-container input[type="text"]:focus~.label,
+    .input-container input[type="text"]:valid~.label {
+      top: -20px;
+      font-size: 16px;
+      color: #ee244e;
+    }
+
+    .input-container .underline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #ee244e;
+      transform: scaleX(0);
+      transition: all 0.3s ease;
+    }
+
+    .input-container input[type="text"]:focus~.underline,
+    .input-container input[type="text"]:valid~.underline {
+      transform: scaleX(1);
+    }
+
+    /* End search */
+
+
+    /* Carousel */
+    .d-block w-100 {
+      height: 600px;
+      opacity: 0.3;
+    }
+
+    .phone-carousel {
+      display: none;
+    }
+
+    .ph-login {
+      display: none;
+    }
+
+    .pppT {
+      padding-left: 70px;
+      font-size: 20px;
+    }
+
+    /* Media Query =====================================================================================================================================
+===================================================================================================================================================*/
+    @media (max-width: 480px) {
+      #hero {
+        background-image: url('../assets/img/phone393/ph7.jpg');
+        margin-top: 0px;
+      }
+
+      .card-D {
+        margin: 50px 0px 60px 12px;
+        width: 300px;
+        height: 530px;
+        border-radius: 20px;
+        background-color: #343a40;
+      }
+
+      .stb-or-btn {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        padding-left: 0px;
+        padding-top: 15px;
+      }
+
+      .ph-login {
+        display: flex;
+        margin-left: 15px;
+      }
+
+      /* carousel */
+      .desktop-carousel {
+        display: none;
+      }
+
+      .phone-carousel {
+        display: flex;
+
+        margin-bottom: 23px;
+      }
+
+
+      /* end */
+      .wwa {
+        display: flex;
+        position: absolute;
+        z-index: 1;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -60px;
+        margin-left: 25px;
+      }
+
+      .wwa h5 {
+        font-size: 10;
+      }
+
+      .counts .counters span {
+        font-size: 50px;
+        display: block;
+        margin-top: 130px;
+        font-weight: 700;
+        color: #ee244e;
+      }
+
+      .counts .counters p {
+        padding: 0;
+        margin: 0 0 20px 0;
+        font-family: "Raleway", sans-serif;
+        font-size: 15px;
+        color: #fff;
+      }
+
+      .account-btn {
+        display: none;
+      }
+
+      .app-title .p-txt {
+        color: #fff;
+        font-weight: 600;
+        font-size: 10px;
+      }
+
+      .carousel-bx3 {
+        display: none;
+      }
+
+      .carousel-bx31 {
+        display: none;
+      }
+
+      .title h1 {
+        margin: 360px 0 10px 0px;
+        font-weight: 700;
+        line-height: 40px;
+        color: #fff;
+      }
+
+      #hero h1 {
+        font-size: 30px;
+        line-height: 36px;
+      }
+
+      #hero h2 {
+        font-size: 10px;
+        line-height: 24px;
+        margin-bottom: 40px;
+
+        margin-top: 185px;
+      }
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 0vh;
+        margin: 0 auto;
+        font-size: 8px;
+        max-width: 300px;
+        padding: 0px 0px;
+        position: relative;
+        border-radius: 10px;
+        transform: skew(-20deg);
+        background-color: #20232b;
+        margin: 60px 0px 0px 0px;
+        /* border: 1px solid #fff; */
+      }
+
+      .search-bar-search {
+        height: 20px;
+        width: 50px;
+        background-color: transparent;
+        transform: skew(-20);
+        border-radius: 10px;
+        font-size: 10px;
+        border-radius: 10px;
+      }
+
+      .search-bar-items {
+        height: 30px;
+        width: 50px;
+        background-color: transparent;
+        /* border: 1px solid #fff; */
+        transform: skew(-20);
+        border-radius: 10px;
+        font-size: 8px;
+        border-radius: 6px;
+      }
+
+      .search-bar-items sub {
+        margin-left: 0px;
+      }
+
+      .search-icon {
+        color: #fff;
+        background-color: #ee244e;
+        width: 39px;
+        height: 35px;
+        padding: 12px;
+        margin-right: -145px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-size: 10px;
+      }
+
+      .items4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 145px;
+        gap: 10px;
+      }
+
+      .wrapper-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 20px;
+        padding-top: 40px;
+        padding-left: 25px;
+      }
+
+      .all-track-title h3 {
+        font-size: 20px;
+      }
+
+      .all-track-padding {
+        padding-inline: 13px;
+      }
+
+      .pppT {
+        padding-left: 25px;
+      }
+
+      .ppp {
+        padding-left: 35px;
+        /* border: 1px solid #fff; */
+        width: 375px;
+        margin-left: 90px;
+        height: 20vh;
+        font-size: 10px;
+        padding: 20px;
+      }
+
+      .all-tracks-btn {
+        border-radius: 10px;
+        background: transparent;
+        transform: skew(-20deg);
+        color: #fff;
+        border: 1px solid #fff;
+        width: 180px;
+        height: 45px;
+        margin: 0px 0px 0px 185px;
+        padding: 10px 18px;
+        font-size: 17px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .cta h3 {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: -18px;
+      }
+
+      .cta .cta-btn {
+        font-family: "Raleway", sans-serif;
+        font-weight: 500;
+        font-size: 7px;
+        letter-spacing: 1px;
+        display: inline-block;
+        padding: 12px 15px;
+        border-radius: 2px;
+        transition: 0.5s;
+        margin-top: -40px;
+        margin-left: 285px;
+        background: #ee244e;
+        color: #fff;
+        border-radius: 10px;
+      }
+
+      .filler {
+        width: 100%;
+        height: 20vh;
+      }
+
+      .f-title {
+        display: flex;
+        justify-content: center;
+        color: #fff;
+        font-size: 12px;
+        margin-top: -60px;
+        /* border: 1px solid #fff; */
+        padding-inline: 0px;
+        padding-left: 25px;
+      }
+
+      .f-sub-title {
+        color: #fff;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      .achivement {
+        display: none;
+      }
+
+      .achivement p {
+        display: none;
+      }
+
+      .container {
+        max-width: 100%;
+        margin: auto;
+        height: 70vh;
+      }
+
+      /* footer */
+      .bottom-nav-list li {
+        display: none;
+      }
+
+      .news-letter1 {
+        color: #fff;
+        height: 5vh;
+        border-radius: 5px 0px 0px 5px;
+        background-color: #20232b;
+        border: solid 1px #fff;
+      }
+
+      .news-letter2 {
+        color: #fff;
+        height: 5vh;
+        width: 70px;
+        border-radius: 0px 5px 5px 0px;
+        background-color: #ee244e;
+        border: solid 1px #fff;
+        font-size: 10px;
+        padding: 5px;
+      }
+
+      .social p {
+        font-size: 5px;
+        margin-right: 0px;
+      }
+
+      /* End footer */
+
+    }
+
+
+
+
+    .both-div {
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(100px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: 80%;
+      border-radius: 20px;
+    }
+
+    .div1 {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .div1,
+    .div2 {
+      width: 50%;
+      height: 50vh;
+      /* border: 1px solid black; */
+      padding: 20px;
+    }
+
+    .div2 img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      border-radius: 20px;
+    }
+
+    .video-div2 {
+      width: 100%;
+      height: 100%;
+    }
+
+
+
+
+    /* ========== */
+
+    .id-card-body {
+      padding-left: 15px;
+      width: auto;
+      height: 349px;
+      color: #fff;
+      background-color: #20232b;
+      border-radius: 0px 0px 15px 15px;
+    }
+
+    .header-app {
       position: relative;
       margin-top: 70px;
       background-color: #ee244e;
@@ -135,47 +674,6 @@ include '../connection/dbconnection.php';
       margin-left: 26px;
     }
 
-    .search-bar {
-      width: 100%;
-      height: 15vh;
-      display: flex;
-      margin: 0 auto;
-      font-size: 14px;
-      max-width: 900px;
-      padding: 16px 32px;
-      position: relative;
-      align-items: center;
-      border-radius: 20px;
-      transform: skew(-20deg);
-      justify-content: center;
-      background-color: #20232b;
-      margin: 0px 150px -200px 150px;
-    }
-
-    .search-bar-search input {
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid #fff;
-      margin-top: -140px;
-
-    }
-
-    .search-bar-search {
-      height: 60px;
-      width: 170px;
-      background-color: transparent;
-      transform: skew(-20);
-      border-radius: 10px;
-      font-size: 20px;
-      border-radius: 10px;
-    }
-
-    .search-bar-items sub {
-      margin-left: -50px;
-    }
-
     .title-h1 {
       margin: 60px 0 10px 0;
       font-size: 70px;
@@ -218,15 +716,17 @@ include '../connection/dbconnection.php';
       font-weight: 400
     }
 
-   
-.cta .container {
-    height: 25vh;
-}
-.cta {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/project-img/traffic-light.jpg") fixed center;
-  background-size: cover;
-  padding: 60px 0;
-}
+
+    .cta .container {
+      height: 25vh;
+    }
+
+    .cta {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/project-img/traffic-light.jpg") fixed center;
+      background-size: cover;
+      padding: 60px 0;
+    }
+
     /* Carousel */
     .d-block w-100 {
       height: 600px;
@@ -236,8 +736,21 @@ include '../connection/dbconnection.php';
     .phone-carousel {
       display: none;
     }
-</style>
+
+
+    @media (max-width: 480px) {
+      .title-h1 {
+        margin: 330px 0 10px 0;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+        color: #fff;
+      }
+
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- ======= Header ======= -->
@@ -246,9 +759,9 @@ include '../connection/dbconnection.php';
 
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
-        <a href="./UserHomePage.php" class="logo me-auto me-lg-0"><img src="../assets/img/D LOGO.png" alt="" class="img-fluid"></a>
+          <a href="./UserHomePage.php" class="logo me-auto me-lg-0"><img src="../assets/img/D LOGO.png" alt="" class="img-fluid"></a>
 
-        <!-- <div class="filter">
+          <!-- <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><h1  class="h1-txt">User</h1></a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                 <li class="dropdown-header text-start">
@@ -262,11 +775,11 @@ include '../connection/dbconnection.php';
             </div> -->
           <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-              <         <li><a class="nav-link scrollto active" href="./TrackDay.php">Track Days</a></li>
+              <li><a class="nav-link scrollto active" href="./TrackDay.php">Track Days</a></li>
               <!-- <li><a class="nav-link scrollto" href="./Organizer.php">Organizer</a></li> -->
               <li><a class="nav-link scrollto" href="./RacingTeam.php">Racing Team</a></li>
-              <li><a class="nav-link scrollto " href="./CorporateEvent.php">Corporate Event</a></li> 
-              <li><a class="nav-link scrollto " href="./ContactUs.php">Contact</a></li> 
+              <li><a class="nav-link scrollto " href="./CorporateEvent.php">Corporate Event</a></li>
+              <li><a class="nav-link scrollto " href="./ContactUs.php">Contact</a></li>
               <!-- <li class="dropdown"><a href="#"><span>Circuit</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="#">Cars</a></li>
@@ -284,93 +797,92 @@ include '../connection/dbconnection.php';
                   <li><a href="../AllTracks.php">All Tracks</a></li>
                 </ul>
               </li> -->
-                <li class="nav-item d-block d-lg-none">
-                  <a class="nav-link nav-icon search-bar-toggle " href="#">
-                    <i class="bi bi-search"></i>
-                  </a>
-                </li><!-- End Search Icon-->
-                <?php
+              <li class="nav-item d-block d-lg-none">
+              </li><!-- End Search Icon-->
+              <?php
 
               $dqry = "SELECT * FROM `user_login` JOIN `user_registration` ON `user_login`.`reg_id`= `user_registration`.`reg_id` where login_id='$uid'";
               // echo $dqry;
               $result = mysqli_query($con, $dqry);
               if ($result->num_rows > 0) {
-                  while ($row = $result->fetch_assoc()) {
-                      $rid = $row['reg_id'];
+                while ($row = $result->fetch_assoc()) {
+                  $rid = $row['reg_id'];
 
-?>
+              ?>
 
-                <li class="nav-item dropdown pe-3">
-                  <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                  <img style="width:40px;height:40px" src="./images/<?php echo $row['image']; ?>" alt="Profile" class="rounded-circle">
-                  <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo  $row["first_name"];?></span>
-                  </a><!-- End Profile Iamge Icon -->
+                  <li class="nav-item dropdown pe-3">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                      <img style="width:40px;height:40px" src="./images/<?php echo $row['image']; ?>" alt="Profile" class="rounded-circle">
+                      <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo  $row["first_name"]; ?></span>
+                    </a><!-- End Profile Iamge Icon -->
 
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                    <li class="dropdown-header">
-                      <h6><?php echo  $row["first_name"];?> <?php echo  $row["last_name"];?></h6>
-                      <span>Web Designer</span>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                      <li class="dropdown-header">
+                        <h6><?php echo  $row["first_name"]; ?> <?php echo  $row["last_name"]; ?></h6>
+                        <span>Web Designer</span>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
 
-                    <li>
-                      <a class="dropdown-item d-flex align-items-center"  href="./UserProfile.php?rid=<?php echo  $row["reg_id"]; ?>">
-                        <i class="bi bi-person"></i>
-                        <span>My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
+                      <li>
+                        <a class="dropdown-item d-flex align-items-center" href="./UserProfile.php?rid=<?php echo  $row["reg_id"]; ?>">
+                          <i class="bi bi-person"></i>
+                          <span>My Profile</span>
+                        </a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
 
-                    <li>
-                      <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                        <i class="bi bi-gear"></i>
-                        <span>Account Settings</span>
-                      </a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
+                      <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                          <i class="bi bi-gear"></i>
+                          <span>Account Settings</span>
+                        </a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
 
-                    <li>
-                      <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                        <i class="bi bi-question-circle"></i>
-                        <span>Need Help?</span>
-                      </a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
+                      <li>
+                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                          <i class="bi bi-question-circle"></i>
+                          <span>Need Help?</span>
+                        </a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
 
-                    <li>
-                      <a class="dropdown-item d-flex align-items-center" href="../Logout.php">
-                        <i class="bi bi-box-arrow-right"></i>
-                        <span>Sign Out</span>
-                      </a>
-                    </li>
+                      <li>
+                        <a class="dropdown-item d-flex align-items-center" href="../Logout.php">
+                          <i class="bi bi-box-arrow-right"></i>
+                          <span>Sign Out</span>
+                        </a>
+                      </li>
                     </ul>
-<?php
-            }}
-?>
-<!-- End Profile Dropdown Items -->
-                 </li><!-- End Profile Nav -->
-              </ul>
+                <?php
+                }
+              }
+                ?>
+                <!-- End Profile Dropdown Items -->
+                  </li><!-- End Profile Nav -->
             </ul>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
         </div>
       </div>
     </div>
   </header><!-- End Header -->
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center" style="background-image: url('../assets/img/project-img/347842.jpg'); margin-top:0px">
+  <section id="hero" class="d-flex flex-column justify-content-center">
 
     <div class="container">
       <div class="row justify-content-center">
         <div class="title">
-          <h1 class="title-h1" style="    margin: 60px 0 10px 0; font-size: 70px; font-weight: 700;line-height: 86px; color: #fff;">
+          <h1 class="title-h1">
             YOUR TRACKDAY MARKETPLACE
           </h1>
         </div>
@@ -405,7 +917,7 @@ include '../connection/dbconnection.php';
               $uid = $row['vendor_id'];
           ?>
               <!--== Track===-->
-              <div class="card-D" style=" width: 370px; height: 530px;";>
+              <div class="card-D" style=" width: 370px; height: 530px;" ;>
                 <div class="id-card--top-image-container">
                   <img style="border-radius:15px 15px 0px 0px; width: 370px; height: 200px;" loading="lazy" class="card-img-top" src="../Vendor\images\<?php echo $row['image']; ?>" alt="Preview Image" />
                 </div>
@@ -476,10 +988,10 @@ include '../connection/dbconnection.php';
                     <div class="row mt-4">
                       <div class="flex__columns">
                         <div class="col-6 flex-column p-0 pr-2" style="margin:0px 0px 0px 65px;">
-                        
+
                           <div class="price">
-                            <a rel="alternate" class="track-price" href="./TrackBooking.php?id=<?php echo  $row["track_id"]; ?>"  hreflang="en">
-                              <button  style="  width: 150px;height: 45px; font-weight: 900;font-size: 22px;     margin: -5px 0px 0px 120px;">
+                            <a rel="alternate" class="track-price" href="./TrackBooking.php?id=<?php echo  $row["track_id"]; ?>" hreflang="en">
+                              <button style="  width: 150px;height: 45px; font-weight: 900;font-size: 22px;     margin: -5px 0px 0px 120px;">
                                 <?php echo  $row["price"];  ?>
                               </button>
                             </a>
@@ -729,7 +1241,7 @@ include '../connection/dbconnection.php';
 
   <!--Subscribe Box-->
   <header>
-    <nav>
+    <nav id="navbar">
       <ul class="bottom-nav-list">
         <li><a href="#">How it<br>works</a></li>
         <li><a href="#about">advantages<br>Organizer</a></li>
@@ -746,6 +1258,7 @@ include '../connection/dbconnection.php';
           </div>
         </form>
       </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>
   </header> <!--End Subscribe Box-->
 

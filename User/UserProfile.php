@@ -21,11 +21,13 @@ include './UserHeader.php';
   }
 
   .card {
-    margin-bottom: 25px;
+    margin-top: 80px;
+    margin-bottom: -75px;
     background: transparent;
     backdrop-filter: blur(80px);
     color: #fff;
 }
+
 
   #social-links {
     color: black;
@@ -36,6 +38,63 @@ include './UserHeader.php';
     margin: 0px 15px;
     color: black;
     font-size: 24px;
+  }
+
+  #row {
+    display: flex;
+    margin: 0px 0px 0px 900px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: baseline;
+    justify-content: flex-start;
+  }
+
+  #card {
+    margin-top: 140px;
+    margin-bottom: 10px;
+    margin-left: -52px;
+    width: 613px;
+  }
+  #name{
+  margin-left: 10px;
+
+}
+  #pbox {
+    margin-left: 849px;
+    width: 613px;
+  }
+
+  @media (max-width:480px) {
+    #row {
+      display: flex;
+      margin: 95px 0px 0px 0px;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-content: flex-end;
+      align-items: baseline;
+      justify-content: flex-start;
+    }
+    #name{
+  margin-left: 25px;
+    font-size: 13px;
+}
+    #card {
+      margin-top: 140px;
+      margin-bottom: 10px;
+      margin-left: -52px;
+      width: 613px;
+    }
+
+    #pbox {
+      margin-left: 0px;
+      width: 100%;
+    }
+    #social-link {
+    margin: 0px 0px;
+    color: silver;
+    font-size: 20px;
+}
   }
 </style>
 
@@ -49,11 +108,11 @@ if ($data->num_rows > 0) {
     $rid = $row['reg_id'];
 ?>
     <section class="SectionProfile">
-      <div class="row" style="display: flex;margin: 0px 0px 0px 900px;flex-wrap: nowrap;flex-direction: column;align-content: flex-end;align-items: baseline;justify-content: flex-start;">
-        <div class="card" style="margin-top: 140px; margin-bottom:10px; margin-left: -52px; width: 613px;">
+      <div id="row" class="row">
+        <div class="card">
           <div class="align-items-center card-body d-flex profile-card pt-4">
             <img style="width:40px;height:40px" src="./images/<?php echo $row['image']; ?>" alt="Profile" class="rounded-circle">
-            <h2 style="margin-left: 10px;"><?php echo  $row["first_name"]; ?> <?php echo  $row["last_name"]; ?></h2>
+            <h2 id="name"><?php echo  $row["first_name"]; ?> <?php echo  $row["last_name"]; ?></h2>
 
             <div id="social-links" class="social-links mt-2">
               <a id="social-link" href="<?php echo  $row["x"]; ?>" id="social-links" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -66,7 +125,7 @@ if ($data->num_rows > 0) {
 
       </div>
 
-      <div class="col-xl-8" style="margin-left: 849px;width: 613px;">
+      <div id="pbox" class="col-xl-8">
 
         <div class="card">
           <div class="card-body pt-3">
@@ -264,7 +323,7 @@ if ($data->num_rows > 0) {
 
 
 
-<?php
+          <?php
           $qry = "SELECT * FROM `booking` JOIN `tracks` WHERE `booking`.`reg_id`=`tracks`.`vendor_id`";
           // echo $qry;
           $data = mysqli_query($con, $qry);
@@ -274,97 +333,98 @@ if ($data->num_rows > 0) {
               // $uid = $row['login_id'];
           ?>
 
-          <div class="tab-pane fade pt-3" id="profile-settings">
+              <div class="tab-pane fade pt-3" id="profile-settings">
 
-            <!-- History Section-->
-            <form>
-              <div class="row mb-3">
-                <label for="fullName" class="col-md-4 col-lg-3 col-form-label"></label>
-                <div class="col-md-8 col-lg-9">
-                  <h5 class="card-title">Booking Details</h5>
+                <!-- History Section-->
+                <form>
+                  <div class="row mb-3">
+                    <label for="fullName" class="col-md-4 col-lg-3 col-form-label"></label>
+                    <div class="col-md-8 col-lg-9">
+                      <h5 class="card-title">Booking Details</h5>
 
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Booking ID</div>
-                    <div class="col-lg-9 col-md-8"><?php echo  $row["booking_id"]; ?></div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Track Name</div>
-                    <div class="col-lg-9 col-md-8"><?php echo  $row["track_name"]; ?></div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Date</div>
-                    <div class="col-lg-9 col-md-8"><?php echo  $row["date"]; ?></div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Amount</div>
-                    <div class="col-lg-9 col-md-8"><?php echo  $row["price"]; ?></div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Status</div>
-                    <div class="col-lg-9 col-md-8"><?php echo  $row["status"]; ?></div>
-                  </div>
-                
-                  <div class="form-check">
-                    <!-- <input class="form-check-input" type="checkbox" id="newProducts" checked>
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label ">Booking ID</div>
+                        <div class="col-lg-9 col-md-8"><?php echo  $row["booking_id"]; ?></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label ">Track Name</div>
+                        <div class="col-lg-9 col-md-8"><?php echo  $row["track_name"]; ?></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label ">Date</div>
+                        <div class="col-lg-9 col-md-8"><?php echo  $row["date"]; ?></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label ">Amount</div>
+                        <div class="col-lg-9 col-md-8"><?php echo  $row["price"]; ?></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 label ">Status</div>
+                        <div class="col-lg-9 col-md-8"><?php echo  $row["status"]; ?></div>
+                      </div>
+
+                      <div class="form-check">
+                        <!-- <input class="form-check-input" type="checkbox" id="newProducts" checked>
                     <label class="form-check-label" for="newProducts">
                       Information on new products and services -->
-                      
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <!-- <input class="form-check-input" type="checkbox" id="proOffers">
+
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <!-- <input class="form-check-input" type="checkbox" id="proOffers">
                     <label class="form-check-label" for="proOffers">
                       Marketing and promo offers -->
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <!-- <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <!-- <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled>
                     <label class="form-check-label" for="securityNotify">
                       Security alerts -->
-                    </label>
+                        </label>
+                      </div>
+                    </div>
                   </div>
-                </div>
+
+                  <div class="text-center">
+                    <!-- <button  class="btn btn-primary">view</button> -->
+                  </div>
+              <?php }
+          } ?>
+                </form><!-- End settings Form -->
+
               </div>
 
-              <div class="text-center">
-                <!-- <button  class="btn btn-primary">view</button> -->
+              <div class="tab-pane fade pt-3" id="profile-change-password">
+                <!-- Change Password Form -->
+                <form>
+
+                  <div class="row mb-3">
+                    <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="password" type="password" class="form-control" id="currentPassword">
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="newpassword" type="password" class="form-control" id="newPassword">
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                    </div>
+                  </div>
+
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                  </div>
+                </form><!-- End Change Password Form -->
+
               </div>
-              <?php }}?>
-            </form><!-- End settings Form -->
-
-          </div>
-
-          <div class="tab-pane fade pt-3" id="profile-change-password">
-            <!-- Change Password Form -->
-            <form>
-
-              <div class="row mb-3">
-                <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
-                <div class="col-md-8 col-lg-9">
-                  <input name="password" type="password" class="form-control" id="currentPassword">
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
-                <div class="col-md-8 col-lg-9">
-                  <input name="newpassword" type="password" class="form-control" id="newPassword">
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
-                <div class="col-md-8 col-lg-9">
-                  <input name="renewpassword" type="password" class="form-control" id="renewPassword">
-                </div>
-              </div>
-
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Change Password</button>
-              </div>
-            </form><!-- End Change Password Form -->
-
-          </div>
 
             </div><!-- End Bordered Tabs -->
 

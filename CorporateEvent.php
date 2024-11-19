@@ -30,7 +30,6 @@ include './header.php';
     height: 35vh;
     background-color: #20232b;
     padding-top: 20px;
-    border: 1px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,18 +47,21 @@ include './header.php';
     border: 1px solid #fff;
     display: flex;
   }
-  .ce-p{
+
+  .ce-p {
     border: 1px solid #ee244e;
-width:100%;
-height:10vh;
-display: flex;
-flex-wrap: wrap;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
   }
-  .row3-ce{
+
+  .row3-ce {
     margin-top: 40px;
     border: 1px solid #ee244e;
 
   }
+
   .carousel-bx3 {
     transform: skew(-20deg);
     background-color: transparent;
@@ -75,12 +77,47 @@ flex-wrap: wrap;
     padding: 13px 5px;
     border-radius: 10;
     margin-left: 26px;
+  }
+
+
+  .title-h1 {
+    margin: 60px 0 10px 0;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 86px;
+    color: #fff;
+  }
+
+  @media (max-width: 480px) {
+    .header-app ,
+    .containerCE,
+    #carouselExampleAutoplaying{
+      display: none;
+    }
+
+    .title-h1 {
+      margin: 60px 0 10px 0;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 25px;
+      color: #fff;
+      text-align: left;
+    }
+    .ce-container {
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    background-color: #ee244e;
+    width: 100%;
+    height: 250dvh;
+    padding: 20px;
 }
+
+  }
 </style>
 
-<section>
-  <!-- Carousel Silde -->
-  <div id="carouselExampleAutoplaying" class="carousel carousel-dark slide">
+
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-center" style="background-image: url('./assets/img/track-wc.jpg'); background-size: cover;">
       <div class="header-app" style="margin-top: 70px; position:relative">
@@ -98,13 +135,14 @@ flex-wrap: wrap;
       <div class="container">
         <div class="row justify-content-center">
           <div class="title">
-            <h1 class="title-h1" style="    margin: 60px 0 10px 0; font-size: 50px; font-weight: 700;line-height: 86px; color: #fff;">
+            <h1 class="title-h1">
               Central booking of corporate driving events
             </h1>
           </div>
         </div>
       </div>
     </section><!-- End Hero -->
+
     <div class="ce-title">
       <h3 class="h1-txt">Your one-stop-shop solution for racetrack incentives</h3>
     </div>
@@ -117,7 +155,7 @@ flex-wrap: wrap;
             <h5 class="h1-txt" style="color:#ee244e">Event overview</h5>
           </div>
           <div class="ce-p">
-          <p class="p-txt">You can choose from a comprehensive overview of possible event dates, organisers and race tracks to quickly find suitable event options. Nothing suitable found? We can quickly search our network for alternatives that are not on the "menu".</p>
+            <p class="p-txt">You can choose from a comprehensive overview of possible event dates, organisers and race tracks to quickly find suitable event options. Nothing suitable found? We can quickly search our network for alternatives that are not on the "menu".</p>
           </div>
         </div>
 
@@ -127,7 +165,7 @@ flex-wrap: wrap;
             <h5 class="h1-txt" style="color:#ee244e">Event overview</h5>
           </div>
           <div class="ce-p">
-          <p class="p-txt">You can choose from a comprehensive overview of possible event dates, organisers and race tracks to quickly find suitable event options. Nothing suitable found? We can quickly search our network for alternatives that are not on the "menu".</p>
+            <p class="p-txt">You can choose from a comprehensive overview of possible event dates, organisers and race tracks to quickly find suitable event options. Nothing suitable found? We can quickly search our network for alternatives that are not on the "menu".</p>
           </div>
         </div>
       </div>

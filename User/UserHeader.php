@@ -40,16 +40,16 @@ include '../connection/dbconnection.php';
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
   <link href="../assets/css/login.css4 " rel="stylesheet">
-<style>
- .id-card-body {
-    padding-left: 15px;
-    width: auto;
-    height: 349px;
-    color: #fff;
-    background-color: #20232b;
-    border-radius: 0px 0px 15px 15px;
-}
-  .header-app {
+  <style>
+    .id-card-body {
+      padding-left: 15px;
+      width: auto;
+      height: 349px;
+      color: #fff;
+      border-radius: 0px 0px 15px 15px;
+    }
+
+    .header-app {
       position: relative;
       margin-top: 70px;
       background-color: #ee244e;
@@ -218,15 +218,17 @@ include '../connection/dbconnection.php';
       font-weight: 400
     }
 
-   
-.cta .container {
-    height: 25vh;
-}
-.cta {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/project-img/traffic-light.jpg") fixed center;
-  background-size: cover;
-  padding: 60px 0;
-}
+
+    .cta .container {
+      height: 25vh;
+    }
+
+    .cta {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/project-img/traffic-light.jpg") fixed center;
+      background-size: cover;
+      padding: 60px 0;
+    }
+
     /* Carousel */
     .d-block w-100 {
       height: 600px;
@@ -236,8 +238,170 @@ include '../connection/dbconnection.php';
     .phone-carousel {
       display: none;
     }
-</style>
+
+    .price a button {
+      margin: 10px 0px 0px 60px;
+    }
+
+    .achivement {
+      color: #fff;
+      position: relative;
+      text-align: center;
+    }
+
+    .header-filler {
+      width: 100%;
+      height: 8dvh;
+      background-color: #202232;
+    }
+
+    .header-app {
+      position: relative;
+      margin-top: 70px;
+      background-color: #ee244e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 10vh;
+    }
+
+    .items4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 160px;
+      gap: 20px;
+    }
+
+    .search-bar-items {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .carousel-bx3 {
+      border-radius: 10px;
+      height: 55px;
+      width: 235px;
+      padding-left: 20px;
+      padding-top: 15px;
+      font-size: 15px
+    }
+
+    .carousel-bx31 {
+      padding-top: 15px;
+      font-size: 14px
+    }
+
+    .carousel-bx3 {
+      transform: skew(-20deg);
+      background-color: transparent;
+      border: 1px #fff solid;
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 900;
+      height: 45px;
+      width: 185px;
+      text-transform: uppercase;
+      padding: 13px 5px;
+      border-radius: 10;
+      margin-left: 26px;
+    }
+
+
+    .carousel-bx31 {
+    transform: skew(-20deg);
+    background-color: transparent;
+    border: 1px #fff solid;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 900;
+    height: 45px;
+    width: 205px;
+    text-transform: uppercase;
+    padding: 13px 5px;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+    .title-h1 {
+      margin: 60px 0 10px 0;
+      font-size: 70px;
+      font-weight: 700;
+      line-height: 86px;
+      color: #fff;
+    }
+
+    /* Media Query =====================================================================================================================================
+===================================================================================================================================================*/
+
+    @media (max-width: 480px) {
+      .stb-or-btn {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        padding-left: 0px;
+        padding-top: 15px;
+      }
+
+      .account-btn {
+        display: none;
+      }
+
+      .app-title .p-txt {
+        color: #fff;
+        font-weight: 600;
+        font-size: 10px;
+      }
+
+      .carousel-bx3 {
+        display: none;
+      }
+
+      .carousel-bx31 {
+        display: none;
+      }
+    
+    /* footer */
+.bottom-nav-list  li{
+  display: none;
+}
+.news-letter1 {
+    color: #fff;
+    height: 5vh;
+    border-radius: 5px 0px 0px 5px;
+    background-color: #20232b;
+    border: solid 1px #fff;
+}
+.news-letter2 {
+    color: #fff;
+    height: 5vh;
+    width: 70px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #ee244e;
+    border: solid 1px #fff;
+    font-size: 10px;
+    padding: 5px;
+}
+.social p{
+  font-size: 5px;
+  margin-right: 0px;
+}
+
+.card-D {
+    margin: 50px 0px 20px 12px;
+    width: 300px;
+    height: 530px;
+    border-radius: 20px;
+    background-color: #343a40;
+}
+    }
+
+  </style>
 </head>
+
 <body>
 
   <!-- ======= Header ======= -->
@@ -246,9 +410,9 @@ include '../connection/dbconnection.php';
 
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
-        <a href="./UserHomePage.php" class="logo me-auto me-lg-0"><img src="../assets/img/D LOGO.png" alt="" class="img-fluid"></a>
+          <a href="./UserHomePage.php" class="logo me-auto me-lg-0"><img src="../assets/img/D LOGO.png" alt="" class="img-fluid"></a>
 
-        <!-- <div class="filter">
+          <!-- <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><h1  class="h1-txt">User</h1></a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                 <li class="dropdown-header text-start">
@@ -262,11 +426,11 @@ include '../connection/dbconnection.php';
             </div> -->
           <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                       <li><a class="nav-link scrollto active" href="./TrackDay.php">Track Days</a></li>
+              <li><a class="nav-link scrollto active" href="./TrackDay.php">Track Days</a></li>
               <!-- <li><a class="nav-link scrollto" href="./Organizer.php">Organizer</a></li> -->
               <li><a class="nav-link scrollto" href="./RacingTeam.php">Racing Team</a></li>
-              <li><a class="nav-link scrollto " href="./CorporateEvent.php">Corporate Event</a></li> 
-              <li><a class="nav-link scrollto " href="./ContactUs.php">Contact</a></li> 
+              <li><a class="nav-link scrollto " href="./CorporateEvent.php">Corporate Event</a></li>
+              <li><a class="nav-link scrollto " href="./ContactUs.php">Contact</a></li>
               <!-- <li class="dropdown"><a href="#"><span>Circuit</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="#">Cars</a></li>
@@ -284,81 +448,83 @@ include '../connection/dbconnection.php';
                   <li><a href="../AllTracks.php">All Tracks</a></li>
                 </ul>
               </li> -->
-                <li class="nav-item d-block d-lg-none">
-                  <a class="nav-link nav-icon search-bar-toggle " href="#">
-                    <i class="bi bi-search"></i>
-                  </a>
-                </li><!-- End Search Icon-->
-                <?php
+              <li class="nav-item d-block d-lg-none">
+                <a class="nav-link nav-icon search-bar-toggle " href="#">
+                  <i class="bi bi-search"></i>
+                </a>
+              </li><!-- End Search Icon-->
+              <?php
 
               $dqry = "SELECT * FROM `user_login` JOIN `user_registration` ON `user_login`.`reg_id`= `user_registration`.`reg_id` where login_id='$uid'";
               // echo $dqry;
               $result = mysqli_query($con, $dqry);
               if ($result->num_rows > 0) {
-                  while ($row = $result->fetch_assoc()) {
-                      $rid = $row['reg_id'];
+                while ($row = $result->fetch_assoc()) {
+                  $rid = $row['reg_id'];
 
-?>
+              ?>
 
-                <li class="nav-item dropdown pe-3">
-                  <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                  <img style="width:40px;height:40px" src="./images/<?php echo $row['image']; ?>" alt="Profile" class="rounded-circle">
-                  <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo  $row["first_name"];?></span>
-                  </a><!-- End Profile Iamge Icon -->
+                  <li class="nav-item dropdown pe-3">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                      <img style="width:40px;height:40px" src="./images/<?php echo $row['image']; ?>" alt="Profile" class="rounded-circle">
+                      <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo  $row["first_name"]; ?></span>
+                    </a><!-- End Profile Iamge Icon -->
 
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                    <li class="dropdown-header">
-                      <h6><?php echo  $row["first_name"];?> <?php echo  $row["last_name"];?></h6>
-                      <span>Web Designer</span>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                      <li class="dropdown-header">
+                        <h6><?php echo  $row["first_name"]; ?> <?php echo  $row["last_name"]; ?></h6>
+                        <span>Web Designer</span>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
 
-                    <li>
-                      <a class="dropdown-item d-flex align-items-center"  href="./UserProfile.php?rid=<?php echo  $row["reg_id"]; ?>">
-                        <i class="bi bi-person"></i>
-                        <span>My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
+                      <li>
+                        <a class="dropdown-item d-flex align-items-center" href="./UserProfile.php?rid=<?php echo  $row["reg_id"]; ?>">
+                          <i class="bi bi-person"></i>
+                          <span>My Profile</span>
+                        </a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
 
-                    <li>
-                      <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                        <i class="bi bi-gear"></i>
-                        <span>Account Settings</span>
-                      </a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
+                      <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                          <i class="bi bi-gear"></i>
+                          <span>Account Settings</span>
+                        </a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
 
-                    <li>
-                      <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                        <i class="bi bi-question-circle"></i>
-                        <span>Need Help?</span>
-                      </a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
+                      <li>
+                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                          <i class="bi bi-question-circle"></i>
+                          <span>Need Help?</span>
+                        </a>
+                      </li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
 
-                    <li>
-                      <a class="dropdown-item d-flex align-items-center" href="../Logout.php">
-                        <i class="bi bi-box-arrow-right"></i>
-                        <span>Sign Out</span>
-                      </a>
-                    </li>
+                      <li>
+                        <a class="dropdown-item d-flex align-items-center" href="../Logout.php">
+                          <i class="bi bi-box-arrow-right"></i>
+                          <span>Sign Out</span>
+                        </a>
+                      </li>
                     </ul>
-<?php
-            }}
-?>
-<!-- End Profile Dropdown Items -->
-                 </li><!-- End Profile Nav -->
-              </ul>
+                <?php
+                }
+              }
+                ?>
+                <!-- End Profile Dropdown Items -->
+                  </li><!-- End Profile Nav -->
             </ul>
+            </ul>
+                 <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
         </div>
       </div>
