@@ -727,7 +727,8 @@ padding-left:300px;
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/project-img/sm1.jpg") fixed center;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/project-img/sm1.jpg") fixed center; */
+  background-color: #202232;
   background-size: cover;
   padding: 120px 0;
 

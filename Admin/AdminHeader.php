@@ -4,23 +4,7 @@ include '../connection/dbconnection.php';
 
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    .Container {
-        background-image: url(../assets/img/wp12661363-bike-racing-4k-wallpapers.jpg);
-        display: grid;
-        background-position: center;
-        background-size: cover;
-        width: auto;
-        height: 100dvh;
-        background-attachment: scroll;
-        padding: 145px;
-    }
 
-    .trackD-th {
-        font-size: 20px;
-        text-transform: uppercase;
-    }
-</style>
 
 <head>
     <meta charset="utf-8">
@@ -51,6 +35,41 @@ include '../connection/dbconnection.php';
 
     <!-- Template Main CSS File -->
     <link href="./assets/css/style.css" type="text/css" rel="stylesheet">
+
+    <style>
+    .Container {
+        background-image: url(../assets/img/wp12661363-bike-racing-4k-wallpapers.jpg);
+        display: grid;
+        background-position: center;
+        background-size: cover;
+        width: auto;
+        height: 100dvh;
+        background-attachment: scroll;
+        padding: 145px;
+    }
+
+    .trackD-th {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    
+    @media (max-width:480px) {
+      .mobile-nav-toggle {
+        display: flex;
+      }
+
+
+      .mobile-nav-toggle {
+        color: #fff;
+        font-size: 28px;
+        cursor: pointer;
+        display: flex;
+        line-height: 0;
+        transition: 0.5s;
+      }
+    }
+</style>
 
 </head>
 
@@ -102,7 +121,7 @@ include '../connection/dbconnection.php';
                                 </ul>
                             </li>
                             <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-                            <li><i class="bi bi-list mobile-nav-toggle"></i></li>
+                            <i class="bi bi-list mobile-nav-toggle"></i>
                         </ul>
 
                     </nav><!-- .navbar -->

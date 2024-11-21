@@ -38,6 +38,9 @@ include '../connection/dbconnection.php';
     <link href="./assets//css/style.css" type="text/css" rel="stylesheet">
 
     <style>
+            #show{
+            display: none;
+        }
         .Container {
             background-image: url(../assets/img/wp12661363-bike-racing-4k-wallpapers.jpg);
             display: grid;
@@ -75,7 +78,7 @@ include '../connection/dbconnection.php';
         }
         /* media Query 480 */
    
-        @media (max-width: 393px) {
+        @media (max-width: 480px) {
             .title .title-h1 {
                 margin: 160px 0 10px 0;
                 font-size: 38px;
@@ -157,6 +160,10 @@ include '../connection/dbconnection.php';
         .Btn:active {
             transform: translate(2px, 2px);
         }
+
+        #show{
+            display: flex;
+        }
         }
 
         /* logout */
@@ -179,12 +186,12 @@ include '../connection/dbconnection.php';
 
                     <nav id="navbar" class="navbar order-last order-lg-0">
                         <ul>
-                            <li><a class="nav-link scrollto active" href="./TrackDay.php">Track Days</a></li>
+                            <!-- <li><a class="nav-link scrollto active" href="./TrackDay.php">Track Days</a></li>
                             <li><a class="nav-link scrollto" href="./Organizer.php">Organizer</a></li>
-                            <li><a class="nav-link scrollto" href="./RacingTeam.php">Racing Team</a></li>
-                            <!-- <li><a class="nav-link scrollto " href="./CorporateEvent.php">Corporate Event</a></li> -->
-                            <li><a class="nav-link scrollto " href="./Calender.php">Corporate Event</a></li>
-                            <li class="dropdown"><a href="#"><span>View<span> <i class="bi bi-chevron-down"></i></a>
+                            <li><a class="nav-link scrollto" href="./RacingTeam.php">Racing Team</a></li> -->
+                            <li><a id="show" class="nav-link scrollto" href="./AdminIndex.php">HOME</a></li>
+                            <!-- <li><a  id="show" class="nav-link scrollto " href="../Logout.php">Logout</a></li> -->
+                            <li id="show"  class="dropdown"><a href="#"><span>View<span> <i class="bi bi-chevron-down"></i></a>
                                 <ul>
                                     <li><a href="./ViewOrganizer.php">Organizer</a></li>
                                     <li><a href="./ViewUser.php">User</a></li>
@@ -255,6 +262,180 @@ include '../connection/dbconnection.php';
             <div class="container">
             </div>
     </section><!-- End Hero -->
+<!-- =========================================================================================================================================== -->
+
+
+    <div class="col-12" style="margin-top: 100px;">
+    <div class="card">
+        <div class="card-body" style="background-color: #ee244b;">
+            <h4 class="h1-txt">Organizers Details</h4>
+        </div>
+    </div>
+</div><!-- End Reports -->
+
+<!-- <div class="container"> -->
+    <section>
+    <div class="table-responsive-sm">
+        <table class="table table-dark table-hover" style="margin-top: 0px;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Company Name</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $qry = "SELECT * FROM `user_login` JOIN `vendor_registration` ON `user_login`.`vendor_id`= `vendor_registration`.`vendor_id` WHERE `user_login`.`type` = 'vendor' ";
+                // echo $qry;
+                $result = mysqli_query($con, $qry);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $id = $row['vendor_id'];
+
+                        echo "<tr>";
+
+                        echo "<td>" . $row["name"] . "</td>";
+                        echo "<td>" . $row["email"] . "</td>";
+                        echo "<td>" . $row["phone"] . "</td>";
+                        echo "<td>" . $row["address"] . "</td>";
+                        echo "<td>" . $row["company_name"] . "</td>";
+                       
+                   
+                        echo "<td> <a class='btn btn-outline-primary' href='./DeleteOrganizer.php?id={$id}'> Remove </a> </td>";
+                        echo "</tr>";
+                    }}
+                ?>
+            </tbody>
+        </table>
+    </div>
+<!-- =========================================================================================================================================== -->
+
+<!-- =========================================================================================================================================== -->
+<div class="col-12" style="margin-top: 100px;">
+    <div class="card">
+        <div class="card-body" style="background-color: #babcc5;">
+            <h4 class="h1-txt" style="color: #ee244e;">Track Details</h4>
+        </div>
+    </div>
+</div><!-- End Reports -->
+<div class="TrackDetails">
+    <div class="table-responsive-sm">
+        <table class="table table-dark table-hover table-sm">
+            <thead>
+                <tr>
+                    <th class="trackD-th">Organizer ID</th>
+                    <th class="trackD-th">Track Name</th>
+                    <th class="trackD-th">Event</th>
+                    <th class="trackD-th">Date</th>
+                    <th class="trackD-th">Vehicle Type</th>
+                    <th class="trackD-th">Category</th>
+                    <th class="trackD-th">Organizer</th>
+                    <th class="trackD-th">Noise Level</th>
+                    <th class="trackD-th">Price</th>
+                    <th class="trackD-th">Status</th>
+                </tr>
+            </thead>
+            <?php
+            $qry = "SELECT tracks.*,user_login.* FROM `tracks`,`user_login` where `user_login`.vendor_id=`tracks`.vendor_id";
+            // echo $qry;
+            $data = mysqli_query($con, $qry);
+
+            if ($data->num_rows > 0) {
+                while ($row = $data->fetch_assoc()) {
+                    $uid = $row['vendor_id'];
+
+                    echo "<tr>";
+                    echo "<td>" . $row["vendor_id"] . "</td>";
+               ?> 
+                 <a href="../TrackBooking.php" ><?php echo "<td>" . $row["track_name"] . "</td>"; ?></a> 
+             <?php 
+                    echo "<td>" . $row["event"] . "</td>";
+                    echo "<td>" . $row["date"] . "</td>";
+                    echo "<td>" . $row["vehicle_type"] . "</td>";
+                    echo "<td>" . $row["category"] . "</td>";
+                    echo "<td>" . $row["organizer"] . "</td>";
+                    echo "<td>" . $row["noise_level"] . "</td>";
+                    echo "<td>" . $row["price"] . "</td>";
+
+                    if ($row["status"] == "Pending") {
+                        echo "<td> <a class='btn btn-outline-danger' href='./ManageTracks.php?id={$uid}&status=rejected'> Approved</a> </td>";
+                    } else if ($row["status"] == "Approved")
+                        echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='7'> No Data Available</td> </tr>";
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- =========================================================================================================================================== -->
+
+<!-- =========================================================================================================================================== -->
+<div class="col-12" style="margin-top: 100px;">
+    <div class="card">
+        <div class="card-body" style="background-color: #ee244b;">
+            <h4 class="h1-txt">User Details</h4>
+        </div>
+    </div>
+</div><!-- End Reports -->
+<!-- <div class="container"> -->
+    <section>
+    <div class="table-responsive-sm">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>UserName</th>
+                    <th>Status</th>
+                    <th>Type</th>
+                    <th> Name</th>
+                    <!-- <th>Last Name</th> -->
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $qry = "SELECT * FROM `user_login` JOIN `user_registration` ON `user_login`.`reg_id`= `user_registration`.`reg_id` WHERE `status` = 'approved' ";
+                echo $qry;
+                $result = mysqli_query($con, $qry);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $id = $row['reg_id'];
+
+                        echo "<tr>";
+
+                        echo "<td>" . $row["username"] . "</td>";
+                        echo "<td>" . $row["status"] . "</td>";
+                        echo "<td>" . $row["type"] . "</td>";
+                        echo "<td>" . $row["first_name"] .$row["last_name"] . "</td>";
+                        // echo "<td>" . $row["last_name"] . "</td>";
+                        echo "<td>" . $row["dob"] . "</td>";
+                        echo "<td>" . $row["gender"] . "</td>";
+                        echo "<td>" . $row["ph"] . "</td>";
+                        echo "<td>" . $row["email"] . "</td>";
+
+                        echo "<td> <a class='btn btn-outline-danger' href='./DeleteUser.php? id={$id}&status=rejected'> Remove </a> </td>";
+
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='7'> No Data Available</td> </tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+<!-- =========================================================================================================================================== -->
+
 
 
     <!-- Revenue Card -->

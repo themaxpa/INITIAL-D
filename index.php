@@ -206,6 +206,14 @@ include './connection/dbconnection.php';
       font-weight: 900;
       text-transform: uppercase;
     }
+    .all-track-title {
+    padding-top: 50px;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
     .ppp {
       padding-left: 50px;
@@ -244,10 +252,22 @@ include './connection/dbconnection.php';
       display: none;
     }
 
+    .all-tracks {
+        max-width: auto;
+        background-color: #ee244e;
+        height: 30vh;
+      }
 
+      
     /* Media Query =====================================================================================================================================
 ===================================================================================================================================================*/
     @media (max-width: 480px) {
+      .all-tracks {
+        max-width: auto;
+        background-color: #ee244e;
+        height: 80vh;
+      }
+
       .stb-or-btn {
         width: 100%;
         height: 60px;
@@ -549,7 +569,7 @@ include './connection/dbconnection.php';
 
     }
 
-    
+
     .pppT {
       padding-left: 70px;
       font-size: 20px;
@@ -563,7 +583,7 @@ include './connection/dbconnection.php';
       align-items: center;
       width: 80%;
       height: 80%;
-      border-radius:20px;
+      border-radius: 20px;
     }
 
     .div1 {
@@ -591,8 +611,6 @@ include './connection/dbconnection.php';
       height: 100%;
     }
 
- 
-    
   </style>
 
 </head>
@@ -688,7 +706,10 @@ include './connection/dbconnection.php';
     <section class="track-card">
       <div class="wrapper" style="background-color:#ee244b;">
         <h1 class="wrapper-title">TRACK DAYS AND DRIVING EXPERIENCES 2024</h1>
-        <div class="track-section" style=" display: flex;">
+        <div class="track-section" style="
+        display: flex;
+        flex-wrap: wrap;
+  ">
 
           <?php
           $qry = "SELECT `vendor_id`,`image`,`track_name`,`event`,`date`,`vehicle_type`,`category`,`organizer`,`noise_level`,`price` FROM `tracks`";
@@ -826,34 +847,7 @@ include './connection/dbconnection.php';
     </section><!-- End Cta Section -->
   </main>
 
-  <!-- End filler -->
-  <section>
-    <div class="filler">
-      <div class="index-sec-title">
-        <h1 class="f-title">We aim to create new standards in the track day market</h1>
-        <h4 class="f-sub-title">And keep them evolving</h4>
-          <!-- ======= all tracks Section ======= -->
-    <div class="all-tracks">
-      <div class="both-div">
-        <div class="div2">
-          <img src="./assets//img/slide3 (2).jpg">
-          <!-- <video class="video-div2" autoplay loop muted plays-inline>
-        <source src="./assets/video/GT Series Dolby Atmos Blancpain Zandvoort.mp4" type="video/mp4">
-        </video> -->
-        </div>
-        <div class="div1">
-          <div class="all-track-title">
-            <h3 class="h1-txt">Book your event dates with a few clicks</h3>
-          </div>
-          <div class="pppT">
-            <p class="p-txt">We offer a wide range of track day dates for cars and bikes, driving and riding experience as well as test days for racing teams. Easily bookable, independently from the corresponding organizer.</p>
-            <a href="./AllTracks.php" class="all-tracks-btn" style="margin: 0px;">All track days</a>
-          </div>
-        </div>
-      </div>
-    </div><!--=== End all tracks Section ===== -->
-      </div>
-  </section><!-- End filler -->
+
 
 
 

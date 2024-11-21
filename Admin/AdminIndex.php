@@ -2,23 +2,15 @@
 session_start();
 include '../connection/dbconnection.php';
 @$uid = $_SESSION['login_id'];
-// echo $uid;
 
-$dqry = "SELECT * FROM `user_login` JOIN `user_registration` ON `user_login`.`reg_id`= `user_registration`.`reg_id` WHERE `login_id` = '$uid' ";
-$data = mysqli_query($con, $dqry);
-
-if ($data->num_rows > 0) {
-  while ($row = $data->fetch_assoc()) {
-    $rid = $row['reg_id'];
 ?>
 
-
-<!DOCTYPE php>
-<php lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Welcome Admin </title>
+    <title>Welcome Admin</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -26,11 +18,11 @@ if ($data->num_rows > 0) {
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
+    <!-- Google Webonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -45,7 +37,59 @@ if ($data->num_rows > 0) {
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
+<style>
+    
 
+/* The switch - the box around the slider */
+.container {
+width: 80px;
+height: 30px;
+position: relative;
+}
+
+/* Hide default HTML checkbox */
+.checkbox {
+opacity: 0;
+width: 0;
+height: 0;
+position: absolute;
+}
+
+.switch {
+width: 100%;
+height: 100%;
+display: block;
+background-color: #e9e9eb;
+border-radius: 16px;
+cursor: pointer;
+transition: all 0.2s ease-out;
+}
+
+/* The slider */
+.slider {
+width: 27px;
+height: 27px;
+position: absolute;
+left: calc(50% - 27px/2 - 10px);
+top: calc(50% - 27px/2);
+border-radius: 50%;
+background: #FFFFFF;
+box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+transition: all 0.2s ease-out;
+cursor: pointer;
+}
+
+.checkbox:checked + .switch {
+background-color: #34C759;
+}
+
+.checkbox:checked + .switch .slider {
+left: calc(50% - 27px/2 + 10px);
+top: calc(50% - 27px/2);
+}
+
+
+</style>
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
@@ -56,34 +100,33 @@ if ($data->num_rows > 0) {
         </div>
         <!-- Spinner End -->
 
-
         <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
+        <div id="headerA" class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="./AdminIndex.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i><?php echo  $row["first_name"];  ?></h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>themaxpa</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="<?php echo  $row["image"];?>" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0"><?php echo  $row["first_name"];?></h6>
+                        <h6 class="mb-0">Alwin Joseph EA </h6>
                         <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="./AdminIndex.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>View</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.php" class="dropdown-item">Buttons</a>
-                            <a href="typography.php" class="dropdown-item">Typography</a>
-                            <a href="element.php" class="dropdown-item">Other Elements</a>
+                            <a href="./ViewOrganizer.php" class="dropdown-item">Organizer</a>
+                            <a href="./ViewTracks.php" class="dropdown-item">Tracks</a>
+                            <a href="./ViewUser.php" class="dropdown-item">User</a>
                         </div>
                     </div>
-                    <a href="widget.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href="./AllTracks.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>All Tracks</a>
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="chart.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
@@ -92,7 +135,7 @@ if ($data->num_rows > 0) {
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="signin.php" class="dropdown-item">Sign In</a>
                             <a href="signup.php" class="dropdown-item">Sign Up</a>
-                            <a href="404.php" class="dropdown-item">404 Error</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
                             <a href="blank.php" class="dropdown-item">Blank Page</a>
                         </div>
                     </div>
@@ -117,10 +160,13 @@ if ($data->num_rows > 0) {
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Message</span>
-                        </a>
+
+                        <div class="container">
+                            <input type="checkbox" class="checkbox" id="checkbox">
+                            <label class="switch" for="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
@@ -181,11 +227,11 @@ if ($data->num_rows > 0) {
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="<?php echo  $row["image"];?>" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex"><?php echo  $row["first_name"];  ?></span>
+                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">themaxpa</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="./Profile.php" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
                             <a href="../Logout.php" class="dropdown-item">Log Out</a>
                         </div>
@@ -265,77 +311,6 @@ if ($data->num_rows > 0) {
             <!-- Sales Chart End -->
 
 
-                 <!-- Sale & Revenue Start -->
-                 <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sale & Revenue End -->
-
-
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sales Chart End -->
-
-            <?php }} ?>
-
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
@@ -389,8 +364,8 @@ if ($data->num_rows > 0) {
                                     } else {
                                         echo "<tr><td colspan='7'> No Data Available</td> </tr>";
                                     }
-                                }}
-                            ?>
+                                }
+                            } ?>
                                         </tr>
 
 
@@ -523,17 +498,18 @@ if ($data->num_rows > 0) {
             </div>
             <!-- Widgets End -->
 
+
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Initial Dream</a>, All Right Reserved. 
+                            &copy; <a href="#">Initial D</a>, All Right Reserved.
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://phpcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="#">maxpacreation</a>
-                            <br>Distributed By: <a href="#" target="_blank">themaxpa</a>
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a href="https://htmlcodex.com">themaxpa</a>
+                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">_maxpa</a>
                         </div>
                     </div>
                 </div>
@@ -541,7 +517,7 @@ if ($data->num_rows > 0) {
             <!-- Footer End -->
         </div>
         <!-- Content End -->
-       
+
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
@@ -562,4 +538,4 @@ if ($data->num_rows > 0) {
     <script src="js/main.js"></script>
 </body>
 
-</php>
+</html>

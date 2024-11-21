@@ -104,21 +104,22 @@
 
 
     .carousel-bx31 {
-    transform: skew(-20deg);
-    background-color: transparent;
-    border: 1px #fff solid;
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 900;
-    height: 45px;
-    width: 205px;
-    text-transform: uppercase;
-    padding: 13px 5px;
-    border-radius: 10px;
-    margin-left: 15px;
-}
+      transform: skew(-20deg);
+      background-color: transparent;
+      border: 1px #fff solid;
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 900;
+      height: 45px;
+      width: 205px;
+      text-transform: uppercase;
+      padding: 13px 5px;
+      border-radius: 10px;
+      margin-left: 15px;
+    }
+
     .title-h1 {
       margin: 60px 0 10px 0;
       font-size: 70px;
@@ -156,51 +157,63 @@
       .carousel-bx31 {
         display: none;
       }
-    
-    /* footer */
-.bottom-nav-list  li{
-  display: none;
-}
-.news-letter1 {
-    color: #fff;
-    height: 5vh;
-    border-radius: 5px 0px 0px 5px;
-    background-color: #20232b;
-    border: solid 1px #fff;
-}
-.news-letter2 {
-    color: #fff;
-    height: 5vh;
-    width: 70px;
-    border-radius: 0px 5px 5px 0px;
-    background-color: #ee244e;
-    border: solid 1px #fff;
-    font-size: 10px;
-    padding: 5px;
-}
-.social p{
-  font-size: 5px;
-  margin-right: 0px;
-}
-.imprint-content {
-    padding: 0px 0px 0px 20px;
-    margin: 0px 0px 0px 25px;
-    width: 100%;
-    height: 100dvh;
-}
-.imprint-content2 {
-    padding: 25px 0px 0px 20px;
-    margin: 0px 0px 0px 20px;
-    width: 80%;
-    height: 315dvh;
-}
-.pnf-error-box {
-    color: #fff;
-    width: 100%;
-    height: 30vh;
-    padding: 0px 15px 15px 0px;
-    margin-left: 55px;
-}
+
+      /* footer */
+      .bottom-nav-list li {
+        display: none;
+      }
+
+      .news-letter1 {
+        color: #fff;
+        height: 5vh;
+        border-radius: 5px 0px 0px 5px;
+        background-color: #20232b;
+        border: solid 1px #fff;
+      }
+
+      .news-letter2 {
+        color: #fff;
+        height: 5vh;
+        width: 70px;
+        border-radius: 0px 5px 5px 0px;
+        background-color: #ee244e;
+        border: solid 1px #fff;
+        font-size: 10px;
+        padding: 5px;
+      }
+
+      .social p {
+        font-size: 5px;
+        margin-right: 0px;
+      }
+
+      .imprint-content {
+        padding: 0px 0px 0px 20px;
+        margin: 0px 0px 0px 25px;
+        width: 100%;
+        height: 100dvh;
+      }
+
+      .imprint-content2 {
+        padding: 25px 0px 0px 20px;
+        margin: 0px 0px 0px 20px;
+        width: 80%;
+        height: 315dvh;
+      }
+
+      .pnf-error-box {
+        color: #fff;
+        width: 100%;
+        height: 30vh;
+        padding: 0px 15px 15px 0px;
+        margin-left: 55px;
+      }
+
+      .grid-card {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -35px;
+      }
     }
   </style>
 </head>
@@ -225,25 +238,25 @@
                   <li><a href="./registration.php">user</a></li>
                   <li><a href="./VendorRegistration.php">Organizer</a></li>
                   <!-- <li class="dropdown"><a href="#"><span>Track 2</span> <i class="bi bi-chevron-right"></i></a> -->
-                    <ul>
-                      <!-- <li><a href="#">Karnataka</a></li> -->
-                      <!-- <li><a href="#">Track 9</a></li>
+                  <ul>
+                    <!-- <li><a href="#">Karnataka</a></li> -->
+                    <!-- <li><a href="#">Track 9</a></li>
                       <li><a href="#">Track 10</a></li> -->
-                    </ul>
-                  </li>
-                  <!-- <li><a href="#">Track 3</a></li>
+                  </ul>
+              </li>
+              <!-- <li><a href="#">Track 3</a></li>
                   <li><a href="#">Track 4</a></li>
                   <li><a href="#">Track 5</a></li> -->
-                </ul>
-              </li>
-              <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+            </ul>
+            </li>
+            <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
             </ul>
 
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
-          <a href="./account.php" class="account-btn" style=" font-size:30px"> 
+          <a href="./account.php" class="account-btn" style=" font-size:30px">
             <i class="bi bi-person-circle"></i>
-          </a>  
+          </a>
         </div>
       </div>
     </div>
