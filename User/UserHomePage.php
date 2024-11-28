@@ -14,7 +14,7 @@ include '../connection/dbconnection.php';
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Initial Speed</title>
+  <title>Initial D</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -846,9 +846,9 @@ include '../connection/dbconnection.php';
                       </li>
 
                       <li>
-                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                        <a class="dropdown-item d-flex align-items-center" href="./Histroy.php">
                           <i class="bi bi-question-circle"></i>
-                          <span>Need Help?</span>
+                          <span>History</span>
                         </a>
                       </li>
                       <li>

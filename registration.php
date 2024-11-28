@@ -345,9 +345,10 @@ include './connection/dbconnection.php';
                 <div class="flex">
                     <label>
                         <select required placeholder="" class="input" name="gender">
-                            <option style="background-color: #ee244e; color:#20232b" value="male">Male</option>
-                            <option style="background-color: #ee244e; color:#20232b" value="female">Female</option>
-                            <option style="background-color: #ee244e; color:#20232b" value="Rather not say">Rather not say</option>
+                        <option style="background-color: #ee244e; color:#20232b" value=" " required></option>
+                            <option style="background-color: #ee244e; color:#20232b" value="male" required>Male</option>
+                            <option style="background-color: #ee244e; color:#20232b" value="female" required>Female</option>
+                            <option style="background-color: #ee244e; color:#20232b" value="Rather not say" required>Rather not say</option>
 
                         </select>
                         <span>Gender</span>

@@ -3,6 +3,8 @@ session_start();
 include '../connection/dbconnection.php';
 include './UserHeader.php';
 @$uid = $_SESSION['login_id'];
+// echo $uid;
+
 $id = $_GET['id'];
 // echo $id;
 
@@ -12,7 +14,7 @@ $data = mysqli_query($con, $qry);
 
 if ($data->num_rows > 0) {
     while ($row = $data->fetch_assoc()) {
-        $uid = $row['vendor_id'];
+        $vendorId = $row['vendor_id'];
 
 ?>
         <style>
@@ -195,12 +197,6 @@ if ($data->num_rows > 0) {
                 }
             }
         </style>
-
-
-
-
-
-
         <div class="containerX">
             <div class="row">
                 <div class="col-lg-4 mb-lg-0 mb-3">
@@ -369,8 +365,8 @@ if ($data->num_rows > 0) {
                                     $cardName = $_POST['card_name'];
                                     // $trackId = $_POST['track_id'];
 
-                                    $payment = "INSERT INTO `booking`(`reg_id`,`track_id`,`card_number`,`exp`,`cvv`,`card_name`,`status`,`price`,`track_name`,`date`)
-                                                        VALUES('$uid ','$id','$cardNumber','$exp','$cvv','$cardName','Paid','$p','$trackName','$date')";
+                                    $payment = "INSERT INTO `booking`(`reg_id`,`track_id`,`vendor_id`,`card_number`,`exp`,`cvv`,`card_name`,`status`,`price`,`track_name`,`date`)
+                                                                 VALUES('$uid ','$id','$vendorId','$cardNumber','$exp','$cvv','$cardName','Paid','$p','$trackName','$date')";
                                     if ($con->query($payment) == TRUE) {
                                         echo "<script>alert('proceed Sucessfully');window.location='./UserHomePage.php'</script>";
                                     } else {

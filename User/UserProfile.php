@@ -96,6 +96,10 @@ include './UserHeader.php';
     font-size: 20px;
 }
   }
+
+  #pfLength{
+    margin-bottom: 100px;
+  }
 </style>
 
 <?php
@@ -128,7 +132,7 @@ if ($data->num_rows > 0) {
       <div id="pbox" class="col-xl-8">
 
         <div class="card">
-          <div class="card-body pt-3">
+          <div id="pfLength" class="card-body pt-3">
             <!-- Bordered Tabs -->
             <ul class="nav nav-tabs nav-tabs-bordered">
 
@@ -324,14 +328,17 @@ if ($data->num_rows > 0) {
 
 
           <?php
-          $qry = "SELECT * FROM `booking` JOIN `tracks` WHERE `booking`.`reg_id`=`tracks`.`vendor_id`";
-          // echo $qry;
-          $data = mysqli_query($con, $qry);
+           // $qry = "SELECT * FROM `booking` JOIN `tracks` WHERE `booking`.`reg_id`=$uid";
+           $qry = "SELECT * FROM `booking` JOIN `tracks` WHERE `booking`.`reg_id`=$uid    AND `tracks`.`track_id`= `booking`.`track_id` ";
+         
+           // echo $qry;
+           $data = mysqli_query($con, $qry);
 
-          if ($data->num_rows > 0) {
-            while ($row = $data->fetch_assoc()) {
-              // $uid = $row['login_id'];
-          ?>
+           if ($data->num_rows > 0) {
+               while ($row = $data->fetch_assoc()) {
+                   // $uid = $row['login_id'];
+           ?>
+          
 
               <div class="tab-pane fade pt-3" id="profile-settings">
 
