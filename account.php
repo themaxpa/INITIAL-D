@@ -305,6 +305,7 @@ include './header.php';
     .agreement a {
         text-decoration: none;
         font-size: 9px;
+        color: #0056b3;
     }
 
     .footer {
@@ -346,6 +347,9 @@ include './header.php';
 
     /* Media Query 480 */
     @media (max-width: 480px) {
+        input{
+            color: #fff;
+        }
 
         .info-d,
         .login-container-ph,
@@ -364,6 +368,7 @@ include './header.php';
 
 
     <!-- phone 393 -->
+     
     <div class="container-ph">
         <div class="heading">Sign In</div>
         <form class="form" method="post">
@@ -376,7 +381,7 @@ include './header.php';
             <input type="submit" name="login" value="LOGIN" class="login-button" />
         </form>
 
-        <span class="agreement">Don't have an account?<a href="./registration.php">Sign Up</a></span>
+        <span class="agreement">Don't have an account?<a href="./registration.php"> Sign Up</a></span>
     </div>
     <!--  -->
 
@@ -534,7 +539,7 @@ include './header.php';
 
         $qry = "SELECT * FROM  `user_login` WHERE `username` = '$username' AND `password` ='$password'"; //AND `status`='Approved'
 
-        echo $qry;
+        // echo $qry;
 
         $result = mysqli_query($con, $qry);
 

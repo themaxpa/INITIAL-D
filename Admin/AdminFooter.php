@@ -6,21 +6,21 @@
                             <div class="footer-col">
                                 <h4>ABOUT US</h4>
                                 <ul>
-                                    <li><a href="../HowWeWork.php">how we work</a></li>
-                                    <li><a href="../OurResponsibility.php">Our responsibility</a></li>
-                                    <li><a href="../PageNotFound.php">Our team & investors</a></li>
-                                    <li><a href="../Career.php">Career</a></li>
-                                    <li><a href="../News.php">News</a></li>
+                                    <li><a href="#">how we work</a></li>
+                                    <li><a href="#">Our responsibility</a></li>
+                                    <li><a href="#">Our team & investors</a></li>
+                                    <li><a href="#">Career</a></li>
+                                    <li><a href="#">News</a></li>
                                 </ul>
                             </div>
                             <div class="footer-col">
                                 <h4>SERVICES</h4>
                                 <ul>
-                                    <li><a href="../Sustainability.php">Sustainability</a></li>
+                                    <li><a href="#">Sustainability</a></li>
                                     <li><a href="#">FAQ/Help</a></li>
-                                    <li><a href="../Terms&Conditions.php">Terms & conditions</a></li>
-                                    <li><a href="../Privacy&Policy.php">Privacy & policy</a></li>
-                                    <li><a href="../Imprint.php">Imprint</a></li>
+                                    <li><a href="#">Terms & conditions</a></li>
+                                    <li><a href="#">Privacy & policy</a></li>
+                                    <li><a href="#">Imprint</a></li>
                                 </ul>
                             </div>
                             <div class="footer-col">

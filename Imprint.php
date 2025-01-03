@@ -2,8 +2,8 @@
 include './connection/dbconnection.php';
 include './header.php';
 ?>
-<section class="scroll-reveal">
-    <div class="dwlapp"></div>
+<section class="row" style="margin-top: 50px;">
+    <div class="container-fluid">
     <div class="imprint">
         <div class="imprint-content">
             <h1 class="h1-txt">Imprint & Legal Information</h1>
@@ -45,6 +45,7 @@ include './header.php';
         <p class="p-txt"> initial Speed Booking GmbH assumes no responsibility for the completeness and/or accuracy of the published offers/information or for<br>any disadvantage or damage of any kind arising from use or non-use of same. Likewise, no responsibility is assumed for defects to<br>software or hardware or any losses ensuing from Internet programs used as part of the online content or data offered for download.</p>
         <h4 class="h1-txt">Disclaimer</h4>
         <p class="p-txt">EThe users shall indemnify HTA Circuit Booking GmbH against all damage claims arising from personal damage, claims and<br>encumbrances of all kind that ensue or which could ensue from using these websites.</p>
+    </div>
     </div>
 </section>
 

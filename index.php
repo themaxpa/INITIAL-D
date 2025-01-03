@@ -13,7 +13,7 @@ include './connection/dbconnection.php';
   <meta content="race tracks,test days,motor bike trackdays" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/bc1.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 
@@ -193,34 +193,34 @@ include './connection/dbconnection.php';
     }
 
     .all-tracks-btn {
-      border-radius: 10px;
-      background: transparent;
-      transform: skew(-20deg);
-      color: #fff;
-      border: 1px solid #fff;
-      width: 200px;
-      height: 45px;
-      margin: 20px 0px 0px 240px;
-      padding: 10px 18px;
-      font-size: 17px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-    .all-track-title {
-    padding-top: 50px;
-    display: flex
-;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
+    border-radius: 10px;
+    background: transparent;
+    transform: skew(-20deg);
+    color: #fff;
+    border: 1px solid #fff;
+    width: 200px;
+    height: 45px;
+    margin: 21px 0px 0px 500px;
+    padding: 10px 18px;
+    /* font-size: 17px; */
+    font-weight: 900;
 }
 
-    .ppp {
-      padding-left: 50px;
+    .all-track-title {
+      padding-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
     }
 
-    .stb-or-btn {
-      margin: 20px 0px 0px -70px;
+
+    .all-track-title {
+      padding-top: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
     }
 
     .achivement {
@@ -253,27 +253,34 @@ include './connection/dbconnection.php';
     }
 
     .all-tracks {
-        max-width: auto;
-        background-color: #ee244e;
-        height: 30vh;
+    max-width: auto;
+    min-height: 220px;
+    background-color: #ee244e;
+}
+.pppT {
+       
       }
 
-      
     /* Media Query =====================================================================================================================================
 ===================================================================================================================================================*/
     @media (max-width: 480px) {
-      .all-tracks {
-        max-width: auto;
-        background-color: #ee244e;
-        height: 80vh;
-      }
+      .ppp {
+        font-size: 12px;
+        margin-top: 30px;
+        text-align: start;
+        margin-left: 10px;
+    }
 
-      .stb-or-btn {
-        width: 100%;
-        height: 60px;
-        display: flex;
-        padding-left: 0px;
-        padding-top: 15px;
+
+
+
+      .all-tracks-btn {
+        margin: 0px 0px 0px 30px;
+        font-size: 10px;
+    }
+
+      .main-sub-email-box {
+        display: none;
       }
 
       .ph-login {
@@ -364,59 +371,9 @@ include './connection/dbconnection.php';
         margin-top: 185px;
       }
 
-      .search-bar {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 5vh;
-        margin: 0 auto;
-        font-size: 8px;
-        max-width: 300px;
-        padding: 0px 0px;
-        position: relative;
-        border-radius: 10px;
-        transform: skew(-20deg);
-        background-color: #20232b;
-        margin: -25px 0px -80px 35px;
-        /* border: 1px solid #fff; */
-      }
 
-      .search-bar-search {
-        height: 20px;
-        width: 50px;
-        background-color: transparent;
-        transform: skew(-20);
-        border-radius: 10px;
-        font-size: 10px;
-        border-radius: 10px;
-      }
 
-      .search-bar-items {
-        height: 30px;
-        width: 50px;
-        background-color: transparent;
-        /* border: 1px solid #fff; */
-        transform: skew(-20);
-        border-radius: 10px;
-        font-size: 8px;
-        border-radius: 6px;
-      }
 
-      .search-bar-items sub {
-        margin-left: 0px;
-      }
-
-      .search-icon {
-        color: #fff;
-        background-color: #ee244e;
-        width: 39px;
-        height: 35px;
-        padding: 12px;
-        margin-right: -145px;
-        border-radius: 10px;
-        font-size: 16px;
-        font-size: 10px;
-      }
 
       .items4 {
         display: flex;
@@ -445,33 +402,11 @@ include './connection/dbconnection.php';
       }
 
       .pppT {
-        padding-left: 25px;
+        padding-left: 12px;
+        font-size: 11px;
       }
 
-      .ppp {
-        padding-left: 35px;
-        /* border: 1px solid #fff; */
-        width: 375px;
-        margin-left: 90px;
-        height: 20vh;
-        font-size: 10px;
-        padding: 20px;
-      }
-
-      .all-tracks-btn {
-        border-radius: 10px;
-        background: transparent;
-        transform: skew(-20deg);
-        color: #fff;
-        border: 1px solid #fff;
-        width: 180px;
-        height: 45px;
-        margin: 0px 0px 0px 185px;
-        padding: 10px 18px;
-        font-size: 17px;
-        font-weight: 900;
-        text-transform: uppercase;
-      }
+ 
 
       .cta h3 {
         color: #fff;
@@ -489,12 +424,10 @@ include './connection/dbconnection.php';
         padding: 12px 15px;
         border-radius: 2px;
         transition: 0.5s;
-        margin-top: -40px;
-        margin-left: 285px;
         background: #ee244e;
         color: #fff;
         border-radius: 10px;
-      }
+    }
 
       .filler {
         width: 100%;
@@ -569,11 +502,71 @@ include './connection/dbconnection.php';
 
     }
 
+    @media (max-width:1024px) {
+      .cta {
+        /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/project-img/sm1.jpg) fixed center; */
+        background-color: #202232;
+        background-size: cover;
+        padding: 90px 0;
+      }
 
-    .pppT {
-      padding-left: 70px;
-      font-size: 20px;
+      .card-D {
+        margin: 50px 0px 60px 30px;
+        width: 300px;
+        height: 530px;
+        border-radius: 20px;
+        background-color: #343a40;
+      }
+
+      .all-tracks-btn {
+        border-radius: 10px;
+        background: transparent;
+        transform: skew(-20deg);
+        color: #fff;
+        border: 1px solid #fff;
+        width: 200px;
+        height: 45px;
+        margin: 0px 0px 0px 0px;
+        padding: 10px 18px;
+        font-size: 17px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .cta .container {
+        height: 25vh;
+      }
     }
+
+
+    @media (max-width:768px) {
+
+      .title {
+        margin-top: -10px;
+        position: absolute;
+        animation-name: titleup;
+        animation-duration: 0.7s;
+        animation-fill-mode: forwards;
+        /* animation-delay: 0.2s; */
+      }
+
+      .card-D {
+        margin: 50px 0px 60px 60px;
+        width: 300px;
+        height: 530px;
+        border-radius: 20px;
+        background-color: #343a40;
+      }
+
+
+      .carousel-bx3,
+      .carousel-bx31 {
+        display: none;
+      }
+    }
+
+    @media (maxw-width:393px) {}
+
 
     .both-div {
       background-color: rgba(0, 0, 0, 0.6);
@@ -610,7 +603,6 @@ include './connection/dbconnection.php';
       width: 100%;
       height: 100%;
     }
-
   </style>
 
 </head>
@@ -660,7 +652,7 @@ include './connection/dbconnection.php';
     </div>
   </header><!-- End Header col-xl-8 -->
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center" style="background-image: url('./assets/img/track1.jpg'); background-size: cover;">
+  <section id="hero" class="d-flex flex-column justify-content-center " style="background-image: url('./assets/img/track1.jpg'); background-size: cover;">
     <div class="header-app">
       <div class="app-title">
         <p class="p-txt" style="margin-top: 15px;">World's Best Track day app - Start your booking right!</p>
@@ -823,10 +815,9 @@ include './connection/dbconnection.php';
         </div>
         <div class="pppT">
           <p class="p-txt">We offer a wide range of track day dates for cars and bikes, driving and riding experience as well as test days for racing teams. Easily bookable, independently from the corresponding organizer.</p>
+          <a href="./AllTracks.php" class="all-tracks-btn">All track days</a>
+
         </div>
-      </div>
-      <div class="stb-or-btn">
-        <a href="./AllTracks.php" class="all-tracks-btn">All track days</a>
       </div>
     </div><!--=== End all tracks Section ===== -->
 
@@ -834,8 +825,8 @@ include './connection/dbconnection.php';
     <section id="cta" class="cta">
 
       <div class="container">
-        <div class="cta-con" style="margin: -96px;">
-          <div class="col-lg-9 text-center text-lg-start">
+        <div class="cta-con">
+          <div class="col-lg-9 text-center text-lg-start" style="margin-top: -100px;">
             <h3 style="font-family:myFont; "> Start your track experience on Initial D</h3>
             <div class="ppp">
               <p>Your on-track experience starts with Initial D. Book your track day, your driving or riding experience or test days for your race team with us - with just a few clicks, secure online payment and independently from the event organizers.</p>
@@ -846,9 +837,6 @@ include './connection/dbconnection.php';
       </div>
     </section><!-- End Cta Section -->
   </main>
-
-
-
 
 
   <!-- ======= Counts Section ======= -->

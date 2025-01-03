@@ -41,363 +41,75 @@ include '../connection/dbconnection.php';
   <link href="../assets/css/style.css" rel="stylesheet">
   <link href="../assets/css/login.css4 " rel="stylesheet">
   <style>
-    .id-card-body {
-      padding-left: 15px;
-      width: auto;
-      height: 349px;
-      color: #fff;
-      border-radius: 0px 0px 15px 15px;
-    }
-
-    .header-app {
-      position: relative;
-      margin-top: 70px;
-      background-color: #ee244e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 10vh;
-    }
-
-    .wwa {
-      display: none;
-    }
-
-    .social {
-      width: 100%;
-      display: flex;
-      justify-content: end;
-      margin-top: 50px
-    }
-
-    .carousel-control-pre .carousel-control-prev-icon span {
-      background-color: transparent;
-    }
-
-    .items4 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: 160px;
-      gap: 20px;
-    }
-
-    .search-bar-items {
-      color: #fff;
-      font-weight: 500;
-    }
-
-    .carousel-bx3 {
-      border-radius: 10px;
-      height: 55px;
-      width: 235px;
-      padding-left: 20px;
-      padding-top: 15px;
-      font-size: 15px
-    }
-
-    .carousel-bx31 {
-      padding-top: 15px;
-      font-size: 14px
-    }
-
-    .carousel-bx3 {
-      transform: skew(-20deg);
-      background-color: transparent;
-      border: 1px #fff solid;
-      color: #fff;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 900;
-      height: 45px;
-      width: 185px;
-      text-transform: uppercase;
-      padding: 13px 5px;
-      border-radius: 10;
-      margin-left: 26px;
-    }
-
-    .carousel-bx31 {
-      transform: skew(-20deg);
-      background-color: transparent;
-      border: 1px #fff solid;
-      color: #fff;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 900;
-      height: 45px;
-      width: 185px;
-      text-transform: uppercase;
-      padding: 13px 5px;
-      border-radius: 10px;
-      margin-left: 26px;
-    }
-
-    .search-bar {
-      width: 100%;
-      height: 15vh;
-      display: flex;
-      margin: 0 auto;
-      font-size: 14px;
-      max-width: 900px;
-      padding: 16px 32px;
-      position: relative;
-      align-items: center;
-      border-radius: 20px;
-      transform: skew(-20deg);
-      justify-content: center;
-      background-color: #20232b;
-      margin: 0px 150px -200px 150px;
-    }
-
-    .search-bar-search input {
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid #fff;
-      margin-top: -140px;
-
-    }
-
-    .search-bar-search {
-      height: 60px;
-      width: 170px;
-      background-color: transparent;
-      transform: skew(-20);
-      border-radius: 10px;
-      font-size: 20px;
-      border-radius: 10px;
-    }
-
-    .search-bar-items sub {
-      margin-left: -50px;
-    }
-
-    .title-h1 {
-      margin: 60px 0 10px 0;
-      font-size: 70px;
-      font-weight: 700;
-      line-height: 86px;
-      color: #fff;
-    }
-
-    .all-tracks-btn {
-      border-radius: 10px;
-      background: transparent;
-      transform: skew(-20deg);
-      color: #fff;
-      border: 1px solid #fff;
-      width: 200px;
-      height: 45px;
-      margin: 20px 0px 0px 240px;
-      padding: 10px 18px;
-      font-size: 17px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .ppp {
-      padding-left: 50px;
-    }
-
-    .stb-or-btn {
-      margin: 20px 0px 0px -70px;
-    }
-
-    .achivement {
-      margin-left: 270px;
-    }
-
-    .social p {
-      color: #fff;
-      opacity: 0.4;
-      margin-right: 250px;
-      font-weight: 400
-    }
-
-
-    .cta .container {
-      height: 25vh;
-    }
-
-    .cta {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/project-img/traffic-light.jpg") fixed center;
-      background-size: cover;
-      padding: 60px 0;
-    }
-
-    /* Carousel */
-    .d-block w-100 {
-      height: 600px;
-      opacity: 0.3;
-    }
-
-    .phone-carousel {
-      display: none;
-    }
-
-    .price a button {
-      margin: 10px 0px 0px 60px;
-    }
-
-    .achivement {
-      color: #fff;
-      position: relative;
-      text-align: center;
-    }
-
-    .header-filler {
-      width: 100%;
-      height: 8dvh;
-      background-color: #202232;
-    }
-
-    .header-app {
-      position: relative;
-      margin-top: 70px;
-      background-color: #ee244e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 10vh;
-    }
-
-    .items4 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: 160px;
-      gap: 20px;
-    }
-
-    .search-bar-items {
-      color: #fff;
-      font-weight: 500;
-    }
-
-    .carousel-bx3 {
-      border-radius: 10px;
-      height: 55px;
-      width: 235px;
-      padding-left: 20px;
-      padding-top: 15px;
-      font-size: 15px
-    }
-
-    .carousel-bx31 {
-      padding-top: 15px;
-      font-size: 14px
-    }
-
-    .carousel-bx3 {
-      transform: skew(-20deg);
-      background-color: transparent;
-      border: 1px #fff solid;
-      color: #fff;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 900;
-      height: 45px;
-      width: 185px;
-      text-transform: uppercase;
-      padding: 13px 5px;
-      border-radius: 10;
-      margin-left: 26px;
-    }
-
-
-    .carousel-bx31 {
-    transform: skew(-20deg);
-    background-color: transparent;
-    border: 1px #fff solid;
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 900;
-    height: 45px;
-    width: 205px;
-    text-transform: uppercase;
-    padding: 13px 5px;
-    border-radius: 10px;
-    margin-left: 15px;
-}
-    .title-h1 {
-      margin: 60px 0 10px 0;
-      font-size: 70px;
-      font-weight: 700;
-      line-height: 86px;
-      color: #fff;
-    }
-
-    /* Media Query =====================================================================================================================================
-===================================================================================================================================================*/
-
-    @media (max-width: 480px) {
-      .stb-or-btn {
-        width: 100%;
-        height: 60px;
-        display: flex;
-        padding-left: 0px;
-        padding-top: 15px;
-      }
-
-      .account-btn {
-        display: none;
-      }
-
-      .app-title .p-txt {
-        color: #fff;
-        font-weight: 600;
-        font-size: 10px;
-      }
-
-      .carousel-bx3 {
-        display: none;
-      }
-
-      .carousel-bx31 {
-        display: none;
-      }
-    
-    /* footer */
-.bottom-nav-list  li{
-  display: none;
-}
-.news-letter1 {
-    color: #fff;
-    height: 5vh;
-    border-radius: 5px 0px 0px 5px;
-    background-color: #20232b;
-    border: solid 1px #fff;
-}
-.news-letter2 {
-    color: #fff;
-    height: 5vh;
-    width: 70px;
-    border-radius: 0px 5px 5px 0px;
-    background-color: #ee244e;
-    border: solid 1px #fff;
-    font-size: 10px;
-    padding: 5px;
-}
-.social p{
-  font-size: 5px;
-  margin-right: 0px;
+  /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
 }
 
-.card-D {
-    margin: 50px 0px 20px 12px;
-    width: 300px;
-    height: 530px;
-    border-radius: 20px;
-    background-color: #343a40;
+.chat-container {
+  width: 400px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
-    }
+
+.chat-box {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-box .message {
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.chat-box .user {
+  background-color: #d1e7dd;
+  align-self: flex-start;
+}
+
+.chat-box .bot {
+  background-color: #f8d7da;
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+#send-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #0056b3;
+}
+
 
   </style>
 </head>
@@ -500,9 +212,9 @@ include '../connection/dbconnection.php';
                       </li>
 
                       <li>
-                        <a class="dropdown-item d-flex align-items-center" href="./Histroy.php">
+                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                           <i class="bi bi-question-circle"></i>
-                          <span>History</span>
+                          <span>Need Help?</span>
                         </a>
                       </li>
                       <li>
@@ -530,3 +242,47 @@ include '../connection/dbconnection.php';
       </div>
     </div>
   </header><!-- End Header -->
+  
+  <div class="chat-container">
+    <div id="chat-box" class="chat-box">
+      <!-- Messages will appear here -->
+    </div>
+    <div class="chat-input">
+      <input type="text" id="message-input" placeholder="Type a message..." />
+      <button id="send-button">Send</button>
+    </div>
+  </div>
+<script>
+    // script.js
+document.addEventListener("DOMContentLoaded", () => {
+  const chatBox = document.getElementById("chat-box");
+  const messageInput = document.getElementById("message-input");
+  const sendButton = document.getElementById("send-button");
+
+  function addMessage(text, sender) {
+    const messageDiv = document.createElement("div");
+    messageDiv.textContent = text;
+    messageDiv.className = `message ${sender}`;
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+  }
+
+  sendButton.addEventListener("click", () => {
+    const userMessage = messageInput.value.trim();
+    if (userMessage) {
+      addMessage(userMessage, "user");
+      messageInput.value = "";
+      setTimeout(() => addMessage("This is a bot response!", "bot"), 500);
+    }
+  });
+
+  messageInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      sendButton.click();
+    }
+  });
+});
+
+</script>
+</body>
+</html>

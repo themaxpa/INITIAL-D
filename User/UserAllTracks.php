@@ -2,7 +2,19 @@
 include '../connection/dbconnection.php';
 include './UserHeader.php';
 ?>
+<style>
+    .grid-card{
+        display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    }
 
+    @media (max-width:480px) {
+        .grid-card{
+            margin-left: 0;
+        }
+    }
+</style>
 
 <!-- Reports -->
  <section>
@@ -14,9 +26,9 @@ include './UserHeader.php';
     </div>
 </div><!-- End Reports -->
 
-<div class="grid-card" style="display:flex; flex-wrap:wrap">
+<div class="grid-card">
 <?php
-$qry = "SELECT `vendor_id`,`image`,`track_name`,`event`,`date`,`vehicle_type`,`category`,`organizer`,`noise_level`,`price` FROM `tracks`";
+$qry = "SELECT `vendor_id`,`image`,`track_name`,`event`,`date`,`vehicle_type`,`category`,`organizer`,`noise_level`,`price`,`track_id` FROM `tracks`";
 // echo $qry;
 $data = mysqli_query($con, $qry);
 
@@ -99,7 +111,7 @@ if ($data->num_rows > 0) {
                             <div class="col-6 flex-column p-0 pr-2" style="margin:0px 0px 0px 65px;">
 
                                 <div class="price">
-                                    <a rel="alternate" class="track-price" href="./TrackBooking.php" hreflang="en">
+                                    <a rel="alternate" class="track-price" href="./TrackBooking.php?id=<?php echo  $row["track_id"]; ?>" hreflang="en">
                                         <button style="  width: 150px;height: 45px; font-weight: 900;font-size: 22px;     margin: -5px 0px 0px 120px;">
                                           <?php echo  $row["price"];  ?>
                                         </button>

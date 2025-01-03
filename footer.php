@@ -1,4 +1,10 @@
-
+<style>
+    @media (max-width: 480px) {
+      .main-sub-email-box{
+        display: none;
+      }
+    }
+</style>
   <!--Subscribe Box-->
   <header>
       <nav> 

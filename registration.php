@@ -50,7 +50,7 @@ include './connection/dbconnection.php';
                             <li><a class="nav-link scrollto" href="./Organizer.php">Organizer</a></li>
                             <li><a class="nav-link scrollto" href="./RacingTeam.php">Racing Team</a></li>
                             <li><a class="nav-link scrollto " href="./CorporateEvent.php">Corporate Event</a></li>
-                            <li class="dropdown"><a href="#"><span>Registration</span> <i class="bi bi-chevron-down"></i></a>
+                            <li class="dropdown"><a href="#" ><span style="color: #fff;">Registration</span> <i class="bi bi-chevron-down" style="color: #fff;"></i></a>
                                 <ul>
                                     <li><a href="./registration.php">user</a></li>
                                     <li><a href="./VendorRegistration.php">Organizer</a></li>
@@ -65,7 +65,7 @@ include './connection/dbconnection.php';
                         <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav><!-- .navbar -->
                     <a href="./account.php" class="account-btn" style=" font-size:30px">
-                        <i class="bi bi-person-circle"></i>
+                        <i class="bi bi-person-circle" style="color: #fff;"></i>
                     </a>
                 </div>
             </div>
@@ -74,9 +74,55 @@ include './connection/dbconnection.php';
 
     <head>
         <style>
-            * {
-                color: #fff;
-            }
+           *{
+            color:#000;
+           }
+
+
+          
+          /* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message h3{
+    font-size: 10px;
+    color: #ee244e;
+}
+#message p {
+    padding: 10px 35px;
+    font-size: 10px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+
+}
+
+
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
 
 
             .containerX {
@@ -261,7 +307,7 @@ include './connection/dbconnection.php';
                     background-image: url('./assets/img/phone393/ph8.jpg');
                     height: 100%;
                     background-size: cover;
-                    background-repeat:no-repeat;
+                    background-repeat: no-repeat;
                     object-fit: cover;
                     backdrop-filter: blur(30px);
                 }
@@ -279,6 +325,11 @@ include './connection/dbconnection.php';
                     width: 100%;
                     height: 100%;
                 }
+            }
+
+            .info-box1,
+            .info-h6{
+color:#fff;
             }
         </style>
     </head>
@@ -306,11 +357,11 @@ include './connection/dbconnection.php';
                 <h3>Track day Participant</h3>
                 <h6 class="info-h6">The registration as trackday participant is open to all individuals interested in driving trainings and trackdays. The registration and the use of our online booking service is free of charge.</h6>
             </div>
-            <div class="info-box2">
+            <div class="info-box1">
                 <h3>Track day Organizer</h3>
                 <h6 class="info-h6">The registration as a trackday provider/organizer is restricted to corporate clients or associations due to legal reasons. You can register as an individual as long as you are an employee or owner of a company or belong to the management board of your association. The registration of our online booking service is free of charge.</h6>
             </div>
-            <div class="info-box3">
+            <div class="info-box1">
                 <h3>Track Rental Clients</h3>
                 <h6 class="info-h6">The registration as a track rental client is restricted to corporate clients due to legal reasons. You can register as an idividual as long as you are an employee or owner of a company.
 
@@ -336,19 +387,34 @@ include './connection/dbconnection.php';
                         <span>Lastname</span>
                     </label>
                 </div>
+                <script>
+                    //  Date of birth validation
 
-                <label>
-                    <input required="" placeholder="" type="date" class="input" name="dob">
-                    <span>Date of Birth</span>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const birthdayInput = document.getElementById("dob");
+                        const today = new Date();
+                        const minDate = new Date("1900-01-01");
+                        const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+
+                        birthdayInput.min = minDate.toISOString().split("T")[0];
+                        birthdayInput.max = maxDate.toISOString().split("T")[0];
+                    });
+                </script>
+                <label for="date">
+                    <input required="" type="date" id="dob" class="input" name="dob">
+                    <!-- <span>Date of Birth</span> -->
+                    <script>
+
+                    </script>
                 </label>
 
                 <div class="flex">
                     <label>
-                        <select required placeholder="" class="input" name="gender">
-                        <option style="background-color: #ee244e; color:#20232b" value=" " required></option>
-                            <option style="background-color: #ee244e; color:#20232b" value="male" required>Male</option>
-                            <option style="background-color: #ee244e; color:#20232b" value="female" required>Female</option>
-                            <option style="background-color: #ee244e; color:#20232b" value="Rather not say" required>Rather not say</option>
+                        <select required placeholder="" class="input" name="gender" required>
+                            <option style="background-color: #ee244e; color:#20232b" value=""></option>
+                            <option style="background-color: #ee244e; color:#20232b" value="male">Male</option>
+                            <option style="background-color: #ee244e; color:#20232b" value="female">Female</option>
+                            <option style="background-color: #ee244e; color:#20232b" value="Rather not say">Rather not say</option>
 
                         </select>
                         <span>Gender</span>
@@ -356,12 +422,12 @@ include './connection/dbconnection.php';
                 </div>
 
                 <label>
-                    <input required="" placeholder="" type="number" class="input" name="licens" maxlength="16">
+                    <input type="text" class="input" name="licens" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="16" placeholder="" required="">
                     <span>Licens Number</span>
                 </label>
 
                 <label>
-                    <input required="" maxlength="10" placeholder="" type="number" class="input" name="ph">
+                    <input type="number" class="input" name="ph" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" placeholder="" required="">
                     <span>Phone</span>
                 </label>
 
@@ -370,8 +436,17 @@ include './connection/dbconnection.php';
                     <span>Email</span>
                 </label>
 
-                <label>
-                    <input required="" placeholder="" type="password" class="input" name="password">
+                <div id="message">
+                    <h3>Password must contain the following:</h3>
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                </div>
+
+
+                <label for="password">
+                    <input class="input" id="password" type="password" name="password" placeholder="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                     <span>Password</span>
                 </label>
 
@@ -473,6 +548,10 @@ include './connection/dbconnection.php';
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/Validation.js"></script>
+
+    <!-- Date validation -->
+
 
 </body>
 

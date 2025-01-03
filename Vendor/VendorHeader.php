@@ -1,11 +1,16 @@
 <?php
- include '../connection/dbconnection.php';
- @$uid = $_SESSION['login_id'];
- $qry = "SELECT * FROM user_login WHERE login_id='$uid'";
+session_start();
+include '../connection/dbconnection.php';
+@$uid = $_SESSION['login_id'];
+// echo $uid;
+$qry = "SELECT * FROM user_login WHERE login_id='$uid'";
 $result = mysqli_query($con, $qry);
 $data = mysqli_fetch_assoc($result);
 @$vendor_id = $data['vendor_id'];
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -182,7 +187,7 @@ height: 5vh;
           <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
               <li><a class="nav-link scrollto" href="#about">About</a></li>
-              <li><a class="nav-link scrollto" href="#services">Services</a></li>
+              <li><a class="nav-link scrollto" href="./Cancel.php">remove</a></li>
               <!-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
               <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li> -->
 

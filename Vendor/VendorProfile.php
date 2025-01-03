@@ -1,6 +1,4 @@
 <?php
-session_start();
-@$uid = $_SESSION['login_id'];
 include '../connection/dbconnection.php';
 include '../Vendor/VendorHeader.php';
 // echo $uid;
@@ -309,7 +307,7 @@ if ($data->num_rows > 0) {
                   <div class="row mb-3">
                     <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Company Licens Number</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="company_licens" type="text" class="form-control" id="#" value="<?php echo  $row["company_licens"]; ?>">
+                      <input name="company_licens" type="text" maxlength="21" class="form-control" id="#" value="<?php echo  $row["company_licens"]; ?>">
                     </div>
                   </div>
 
@@ -408,10 +406,11 @@ if ($data->num_rows > 0) {
             <!-- Change Password Form -->
             <form>
 
+      
               <div class="row mb-3">
                 <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                 <div class="col-md-8 col-lg-9">
-                  <input name="password" type="password" class="form-control" id="currentPassword">
+                  <input name="password" type="password" id="password" class="form-control" id="currentPassword">
                 </div>
               </div>
 
@@ -430,10 +429,14 @@ if ($data->num_rows > 0) {
               </div>
 
               <div class="text-center">
-                <button type="submit" class="btn btn-primary">Change Password</button>
+                <button type="submit" name="change" class="btn btn-primary">Change Password</button>
               </div>
             </form><!-- End Change Password Form -->
 
+            <?php
+          
+              ?>
+            
           </div>
 
             </div><!-- End Bordered Tabs -->

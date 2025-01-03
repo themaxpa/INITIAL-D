@@ -104,7 +104,7 @@ top: calc(50% - 27px/2);
         <div id="headerA" class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="./AdminIndex.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>themaxpa</h3>
+                    <h3 class="text-primary"></i>themaxpa</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -128,14 +128,14 @@ top: calc(50% - 27px/2);
                     </div>
                     <a href="./AllTracks.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>All Tracks</a>
                     <a href="form.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    <a href="./ReplayFeedBack.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Feedback</a>
                     <a href="chart.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="signin.php" class="dropdown-item">Sign In</a>
                             <a href="signup.php" class="dropdown-item">Sign Up</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="404.php" class="dropdown-item">404 Error</a>
                             <a href="blank.php" class="dropdown-item">Blank Page</a>
                         </div>
                     </div>
@@ -383,8 +383,8 @@ top: calc(50% - 27px/2);
                     <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="h-100 bg-secondary rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-2">
-                                <h6 class="mb-0">Messages</h6>
-                                <a href="">Show All</a>
+                                <h6 class="mb-0">Feedback</h6>
+                                <a href="./ReplayFeedBack.php">Show All</a>
                             </div>
                             <div class="d-flex align-items-center border-bottom py-3">
                                 <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">

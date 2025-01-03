@@ -7,6 +7,47 @@ include './header.php';
 
 <head>
     <style>
+        
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message h3{
+    font-size: 10px;
+    color: #ee244e;
+}
+#message p {
+    padding: 10px 35px;
+    font-size: 10px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
      .footer{
         padding: 70px 10px 0px 10px;
      }
@@ -303,9 +344,11 @@ include './header.php';
             <span>Email</span>
         </label>
         <label>
-            <input class="input" type="number" name="phone" maxlength="10" placeholder="" required="">
+            <input class="input" type="number" name="phone" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" placeholder="" required="">
             <span>Phone Number</span>
         </label>
+
+  
 
         <label>
             <input class="input" type="text" name="address" placeholder="" required="">
@@ -328,17 +371,24 @@ include './header.php';
             <span>About</span>
         </label>
 
-        <label>
-            <input class="input" type="password" name="password" placeholder="" required="">
+
+        <div id="message">
+  <h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+
+
+        <label for="password">
+            <input class="input" id="password" type="password" name="password" placeholder="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
             <span>Password</span>
         </label>
 
         <button class="submit" name="submit">Submit</button>
         <p class="signin">Already have an acount ? <a href="./account.php">Signin</a> </p>
     </form>
-
-
-
 
 
   <!--Subscribe Box-->
@@ -420,6 +470,8 @@ include './header.php';
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center" style="background-color:#ee244b;"><i class="bi bi-arrow-up-short"></i></a>
 
 
+
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -431,6 +483,7 @@ include './header.php';
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/Validation.js"></script>
 
 </body>
 
@@ -469,7 +522,7 @@ if (isset($_REQUEST['submit'])) {
     } else {
 
         $sql = "INSERT INTO `vendor_registration` (`image`,`name`, `email`, `phone`, `address`,`country`,`company_name`,`about`,`password`) 
-                                         VALUES ('$filename','$name', '$email', '$phone', '$address','$country','$companyname','$about','$password');";
+                                         VALUES ('$filename','$name', '$email', '$phone', '$address','$country','$companyname','$about','$password')";
         echo $sql;
         mysqli_query($con, $sql);
 

@@ -106,4 +106,6 @@ if ($data->num_rows > 0) {
 </body>
 
 </html>
-<?php}}?>
+<?php
+  }}
+?>

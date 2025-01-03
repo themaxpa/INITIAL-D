@@ -1,27 +1,37 @@
+  <style>
+    @media (max-width:480px) {
+
+      .main-sub-email-box,
+      .bottom-nav-list {
+        display: none;
+      }
+
+    }
+  </style>
   <!--Subscribe Box-->
   <header>
-      <nav> 
-         <ul class="bottom-nav-list">
-          <li><a  href="#">How it<br>works</a></li>
-          <li><a  href="#about">advantages<br>Organizer</a></li>
-          <li><a  href="./UserAdvantagesCircuits.php">advantages<br>Circuits</a></li>
-          <li><a  href="#portfolio">Affiliate<br>Program</a></li>
-          <li><a  href="../OurPartner.php">Our<br>partner</a></li>
-        
-          <form class="main-sub-email-box" action="./index.php" method="post">
-            <div class="sub-email-box">
-              <input  type="email" class="news-letter1" placeholder="     newsletter@initial-D" style="padding-left: 10px;" required>
-            </div>
-            <div class="sub-email-box">
-              <button  type="submit" class="news-letter2" >Subscribe</button>
-            </div>
-          </form>
-         </ul>
-      </nav>
-  </header> <!--End Subscribe Box-->
-<!-- ======= Footer ======= -->
+    <nav>
+      <ul class="bottom-nav-list">
+        <li><a href="#">How it<br>works</a></li>
+        <li><a href="#about">advantages<br>Organizer</a></li>
+        <li><a href="./UserAdvantagesCircuits.php">advantages<br>Circuits</a></li>
+        <li><a href="#portfolio">Affiliate<br>Program</a></li>
+        <li><a href="../OurPartner.php">Our<br>partner</a></li>
 
-  <footer class="footer" style="padding: 70px 10px 0px 10px;">
+        <form class="main-sub-email-box" action="./index.php" method="post">
+          <div class="sub-email-box">
+            <input type="email" class="news-letter1" placeholder="     newsletter@initial-D" style="padding-left: 10px;" required>
+          </div>
+          <div class="sub-email-box">
+            <button type="submit" class="news-letter2">Subscribe</button>
+          </div>
+        </form>
+      </ul>
+    </nav>
+  </header> <!--End Subscribe Box-->
+  <!-- ======= Footer ======= -->
+
+  <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="footer-col">
@@ -88,6 +98,12 @@
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/script.js"></script>
+  <!-- JQuery -->
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
 
-</body>
-</html>
+  </body>
+
+  </html>

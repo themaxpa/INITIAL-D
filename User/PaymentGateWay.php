@@ -199,7 +199,7 @@ if ($data->num_rows > 0) {
         </style>
         <div class="containerX">
             <div class="row">
-                <div class="col-lg-4 mb-lg-0 mb-3">
+                <!-- <div class="col-lg-4 mb-lg-0 mb-3">
                     <div id="p3" class="card p-3">
                         <div class="img-box">
                             <img src="https://www.freepnglogos.com/uploads/visa-logo-download-png-21.png" alt="">
@@ -242,7 +242,7 @@ if ($data->num_rows > 0) {
                             <small><span class="fw-bold">Name:</span><span>Kumar</span></small>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-12 mt-4">
                     <div class="card p-3">
                         <p class="mb-0 fw-bold h4">Payment Methods</p>
@@ -327,15 +327,15 @@ if ($data->num_rows > 0) {
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form__div">
-                                                <input type="number" class="form-control" name="card_number" maxlength="16" placeholder=" ">
+                                                <input type="number" class="form-control" name="card_number"oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="16" placeholder="" required=""placeholder=" ">
                                                 <label for="" class="form__label">Card Number</label>
                                             </div>
                                         </div>
 
                                         <div class="col-6">
                                             <div class="form__div">
-                                                <input type="text" class="form-control" name="exp" placeholder=" ">
-                                                <label for="" class="form__label">MM / yy</label>
+                                                <input type="text" class="form-control" name="exp" maxlength="5"  id="exp"  pattern="^(0[1-9]|1[0-2])\/\d{2}$" title="Enter a valid expiration date in MM/YY format" required>
+                                                <label for="exp" class="form__label">MM / yy</label>
                                             </div>
                                         </div>
 
@@ -347,7 +347,7 @@ if ($data->num_rows > 0) {
                                         </div>
                                         <div class="col-12">
                                             <div class="form__div">
-                                                <input type="text" class="form-control" name="card_name" placeholder=" ">
+                                                <input type="text" class="form-control" name="card_name" placeholder="" required="">
                                                 <label for="" class="form__label">name on the card</label>
                                             </div>
                                         </div>

@@ -5,7 +5,7 @@ include './VendorHeader.php';
     .ServiceHero{
         width: auto;
         height: 100vh;
-        background-image: url('../assets/img/vt.jpg');
+        background-image: url('../assets/img/backiee-81974-landscape.jpg');
         background-size: cover;
     }
 </style>

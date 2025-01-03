@@ -112,7 +112,7 @@ include '../connection/dbconnection.php';
                                             </li>
 
                                             <li>
-                                                <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                                <a class="dropdown-item d-flex align-items-center" href="./PageNotFound.php">
                                                     <i class="bi bi-gear"></i>
                                                     <span>Account Settings</span>
                                                 </a>
@@ -122,7 +122,7 @@ include '../connection/dbconnection.php';
                                             </li>
 
                                             <li>
-                                                <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                                <a class="dropdown-item d-flex align-items-center" href="./NeedHelp.php">
                                                     <i class="bi bi-question-circle"></i>
                                                     <span>Need Help?</span>
                                                 </a>
@@ -157,9 +157,10 @@ include '../connection/dbconnection.php';
         <div class="flex flex-col gap-2 bg-gray-700 p-4 pb-2" style="margin-top: 100px;">
             <div class="flex items-center h-12 justify-between">
                 <div class="text-[#111418] flex size-12 shrink-0 items-center" data-icon="ArrowLeft" data-size="24px" data-weight="regular">
+                    <a href="./UserHomePage.php">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                         <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
-                    </svg>
+                    </svg></a>
                 </div>
             </div>
             <p class="h1-txt" style="color:black;font-size:25px">Booking history</p>

@@ -3,10 +3,10 @@ session_start();
 include '../connection/dbconnection.php';
 include './UserHeader.php';
 @$uid = $_SESSION['login_id'];
-echo $uid;
+// echo $uid;
 
 $id = $_GET['id']; //Track ID
-echo $id;
+// echo $id;
 ?>
 <style>
   /*  description */

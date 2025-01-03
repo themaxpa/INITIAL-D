@@ -1,11 +1,25 @@
 <?php
+session_start();
 include '../connection/dbconnection.php';
-include '../header.php';
+include './AdminHeader.php';
 ?>
 
+<style>
+    .grid-card{
+        display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    }
+
+    @media (max-width:480px) {
+        .grid-card{
+            margin-left: 0;
+        }
+    }
+</style>
 
 <!-- Reports -->
-<section>
+ <section>
 <div class="col-12" style="margin-top: 100px;">
     <div class="card">
         <div class="card-body" style="background-color: #ee244b; border:none">
@@ -14,9 +28,9 @@ include '../header.php';
     </div>
 </div><!-- End Reports -->
 
-<div class="grid-card" style="display:flex; flex-wrap:wrap">
+<div class="grid-card">
 <?php
-$qry = "SELECT `vendor_id`,`image`,`track_name`,`event`,`date`,`vehicle_type`,`category`,`organizer`,`noise_level`,`price` FROM `tracks`";
+$qry = "SELECT `vendor_id`,`image`,`track_name`,`event`,`date`,`vehicle_type`,`category`,`organizer`,`noise_level`,`price`,`track_id` FROM `tracks`";
 // echo $qry;
 $data = mysqli_query($con, $qry);
 
@@ -28,7 +42,7 @@ if ($data->num_rows > 0) {
         <!--== Track===-->
         <div class="card-D" style=" width: 370px; height: 530px;";>
             <div class="id-card--top-image-container">
-                <img style="border-radius:15px 15px 0px 0px; width: 370px; height: 200px;" loading="lazy" class="card-img-top" src="Vendor\images\<?php echo $row['image']; ?>" alt="Preview Image" />
+                <img style="border-radius:15px 15px 0px 0px; width: 370px; height: 200px;" loading="lazy" class="card-img-top" src="../Vendor/images/<?php echo $row['image']; ?>" alt="Preview Image" />
             </div>
             <div class="id-card-body">
                 <div class="id-body-header">
@@ -99,9 +113,9 @@ if ($data->num_rows > 0) {
                             <div class="col-6 flex-column p-0 pr-2" style="margin:0px 0px 0px 65px;">
 
                                 <div class="price">
-                                    <a rel="alternate" class="track-price" href=" " hreflang="en">
+                                    <a rel="alternate" class="track-price" href="#" hreflang="en">
                                         <button style="  width: 150px;height: 45px; font-weight: 900;font-size: 22px;     margin: -5px 0px 0px 120px;">
-                                            <?php echo  $row["price"];  ?>
+                                          <?php echo  $row["price"];  ?>
                                         </button>
                                     </a>
                                 </div>
@@ -121,3 +135,7 @@ if ($data->num_rows > 0) {
 </div>
 
 </section><!--End Track Section --->
+
+    <?php
+    include './AdminFooter.php';
+    ?>

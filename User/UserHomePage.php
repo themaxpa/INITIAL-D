@@ -218,9 +218,20 @@ include '../connection/dbconnection.php';
       font-size: 20px;
     }
 
+    .track-section {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 100px;
+    }
+
     /* Media Query =====================================================================================================================================
 ===================================================================================================================================================*/
     @media (max-width: 480px) {
+      .track-section {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left:0px;
+    }
       #hero {
         background-image: url('../assets/img/phone393/ph7.jpg');
         margin-top: 0px;
@@ -819,7 +830,7 @@ include '../connection/dbconnection.php';
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                       <li class="dropdown-header">
                         <h6><?php echo  $row["first_name"]; ?> <?php echo  $row["last_name"]; ?></h6>
-                        <span>Web Designer</span>
+                        <span>User</span>
                       </li>
                       <li>
                         <hr class="dropdown-divider">
@@ -836,9 +847,9 @@ include '../connection/dbconnection.php';
                       </li>
 
                       <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                        <a class="dropdown-item d-flex align-items-center" href="./Feedback.php">
                           <i class="bi bi-gear"></i>
-                          <span>Account Settings</span>
+                          <span>Feedback</span>
                         </a>
                       </li>
                       <li>
@@ -905,7 +916,7 @@ include '../connection/dbconnection.php';
     <section class="track-card">
       <div class="wrapper" style="background-color:#ee244b;">
         <h1 class="wrapper-title">TRACK DAYS AND DRIVING EXPERIENCES 2024</h1>
-        <div class="track-section" style=" display: flex;">
+        <div class="track-section">
 
           <?php
           $qry = "SELECT `track_id`,`vendor_id`,`image`,`track_name`,`event`,`date`,`vehicle_type`,`category`,`organizer`,`noise_level`,`price` FROM `tracks`";
@@ -1031,7 +1042,7 @@ include '../connection/dbconnection.php';
         <div class="col-lg-9 text-center text-lg-start">
           <h3 style="font-family:myFont; "> Start your track experience on Initial D</h3>
           <p>Your on-track experience starts with Initial D. Book your track day, your driving or riding experience or test days for your race team with us - with just a few clicks, secure online payment and independently from the event organizers.</p>
-          <a class="cta-btn align-middle" href="#">Book Now</a>
+          <a class="cta-btn align-middle" href="./UserAllTracks.php">Book Now</a>
 
         </div>
       </div>
@@ -1059,7 +1070,8 @@ include '../connection/dbconnection.php';
 
 
   <!-- ======= Counts Section ======= -->
-  <section id="counts" class="counts">
+
+  <!-- <section id="counts" class="counts">
     <div class="container">
 
       <div class="achivement" style="margin-left: 270px;">
@@ -1092,7 +1104,7 @@ include '../connection/dbconnection.php';
       </div>
 
     </div>
-  </section><!-- End Counts Section -->
+  </section> -->
 
 
 

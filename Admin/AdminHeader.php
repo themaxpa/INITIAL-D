@@ -80,50 +80,10 @@ include '../connection/dbconnection.php';
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
-                    <div class="filter">
-                        <a class="icon" href="#" data-bs-toggle="dropdown">
-                            <h1 class="h1-txt" style="color:gray">Admin</h1>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                            <li class="dropdown-header text-start">
-                                <h6>Filter</h6>
-                            </li>
-
-                            <li><a class="dropdown-item" href="./Profile.php">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">This Month</a></li>
-                            <li><a class="dropdown-item" href="../Logout.php">Log Out</a></li>
-                        </ul>
-                    </div>
-                    <a href="./AdminHomePage.php" class="logo me-auto me-lg-0"><img src="../assets/img/D LOGO.png" alt="" class="img-fluid"></a>
+                <a class="icon" href="./AdminIndex.php"> <img src="../assets/img/icons/back-button64px.png"></a>
+                    <!-- <a href="./AdminHomePage.php" class="logo me-auto me-lg-0"><img src="../assets/img/D LOGO.png" alt="" class="img-fluid"></a> -->
 
                     <nav id="navbar" class="navbar order-last order-lg-0">
-                        <ul>
-                            <!-- <li><a class="nav-link scrollto active" href="./ViewUser.php">View User</a></li> -->
-                            <!-- <li><a class="nav-link scrollto" href="./about.php">About</a></li>
-                            <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                            <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                            <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li> -->
-                            <li class="dropdown"><a href="#"><span>View</span> <i class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="./ViewUser.php">User</a></li>
-                                    <li class="dropdown"><a href="./ViewOrganizer.php"><span>Organizer</span> <i class="bi bi-chevron-right"></i></a>
-                                        <ul>
-                                            <!-- <li><a href="./ViewTracks.php">Race Tracks</a></li>
-                                            <li><a href="#">Deep Drop Down 2</a></li>
-                                            <li><a href="#">Deep Drop Down 3</a></li>
-                                            <li><a href="#">Deep Drop Down 4</a></li>
-                                            <li><a href="#">Deep Drop Down 5</a></li> -->
-                                        </ul>
-                                    </li>
-                                    <li><a href="./ViewTracks.php">Race Tracks</a></li>
-                                    <!-- <li><a href="#">Drop Down 3</a></li>
-                                    <li><a href="#">Drop Down 4</a></li> -->
-                                </ul>
-                            </li>
-                            <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-                            <i class="bi bi-list mobile-nav-toggle"></i>
-                        </ul>
-
                     </nav><!-- .navbar -->
                 </div>
             </div>

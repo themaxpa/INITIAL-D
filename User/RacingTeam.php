@@ -444,6 +444,21 @@ include './UserHeader.php';
 
     </div>
   </section><!-- End Faq Section -->
+  
+<section>
+  <div class="hero-container">
+  <div class="hero">
+    <video autoplay loop muted plays-inline class="video">
+      <source src="../assets/video/GT Series Dolby Atmos Blancpain Zandvoort.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h1>INITIAL D</h1>
+    
+    </div>
+  </div>
+  </div>
+</section>
   <!-- Carousel Silde -->
   <div id="carouselExampleAutoplaying" class="carousel carousel-dark slide">
     <div class="carousel-indicators">

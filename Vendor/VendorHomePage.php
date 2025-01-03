@@ -93,54 +93,10 @@ $data = mysqli_fetch_assoc($result);
       background-color: black;
     }
 
-    .preview-card {
-      margin: 130px 0px 60px 50px;
-      width: 90%;
-      height: 80%;
-      border-radius: 20px;
-      background-color: #20232b;
-    }
-
-    .preview-card-body {
-      padding-left: 15px;
-      margin-top: 5px;
-      width: 100%;
-      color: #fff;
-
-    }
-
-    .preview-caption-text {
-      display: flex;
-      justify-content: flex-start;
-      color: #fff;
-    }
-
-    .preview-price a button {
-      transform: skew(-20deg);
-      width: 119px;
-      height: 36px;
-      border-radius: 10px;
-      font-weight: 200;
-      font-size: 15px;
-      margin: 10px 0px 0px 60px;
-      background-color: #ee244b;
-      color: #fff;
-      transition: 0.3s;
-    }
-
-    .preview-price a button:hover {
-      background-color: #20232b;
-      color: #ee244b;
-      padding-left: 2px;
-    }
-
-    .preview-price {
-      margin: 1px -396px 0px 345px;
-      padding: 37px 49px -1px 0px;
-    }
+    
 
     .addTrack {
-      width: 50%;
+      width: 100%;
       border-radius: 10px;
       background-color: black;
       /* border: 1px solid #fff; */
@@ -497,7 +453,7 @@ $data = mysqli_fetch_assoc($result);
             <ul>
               <li><a class="nav-link scrollto" href="./About.php">About</a></li>
               <li><a class="nav-link scrollto" href="./Service.php">Services</a></li>
-              <!-- <li><a class="nav-link scrollto" href="./VendorAddTracks.php">Add Tracks</a></li>  -->
+              <li><a class="nav-link scrollto" href="./AddTracks.php">Add Tracks</a></li> 
 
               <!-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
               
@@ -656,9 +612,15 @@ $data = mysqli_fetch_assoc($result);
 
 
         <label>
-          <input class="input" type="date" name="date" placeholder="" required="">
+          <input class="input" type="date" name="date" id="date" placeholder="" required="">
           <span>Date</span>
         </label>
+        <script>
+  // Set the minimum date to today
+  const today = new Date().toISOString().split("T")[0];
+  document.getElementById("date").setAttribute("min", today);
+</script>
+
 
         <label>
           <input class="input" type="text" name="vehicle_type" placeholder="" required="">
@@ -812,6 +774,7 @@ $data = mysqli_fetch_assoc($result);
       }
     }
     ?>
+
     <?php
     $qry = "SELECT `track_id`,`vendor_id`,`image`,`track_name`,`event`,`date`,`vehicle_type`,`category`,`organizer`,`noise_level`,`price` 
       FROM `tracks` 
@@ -831,95 +794,6 @@ $data = mysqli_fetch_assoc($result);
     }
     ?>
 
-
-    <!--== Track===-->
-    <div class="preview" style=" width: 50%; height:100%;">
-      <div class="previewCard">
-        <div class="id-card--top-image-container">
-          <img style="border-radius:15px 15px 0px 0px; width: 370px; height: 200px;" loading="lazy" class="card-img-top" src="Vendor\images\<?php echo @$row['image']; ?>" alt="Preview Image" />
-        </div>
-        <div class="id-card-body">
-          <div class="id-body-header">
-
-            <h5 class="portfolio-title header--title text-white">
-              <?php echo  @$row["track_name"]; ?>
-            </h5>
-            <p>
-              <?php echo  @$row["event"]; ?>
-            </p>
-          </div>
-          <div class="body">
-            <div class="row mt-4">
-              <div class="flex-columns">
-                <div class="col-12 flex-column p-0 pr-2">
-                  <div class="value start-date">
-                    <i class="bi bi-calendar2"></i>
-                    <?php echo  @$row["date"];  ?>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-2">
-              <div class="flex__columns">
-                <div class="col-12 flex-column p-0 pr-2">
-                  <div class="value">
-                    <i class="fa-solid fa-car"></i>
-                    <?php echo  @$row["vehicle_type"];  ?>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-2">
-              <div class="flex__columns">
-                <div class="col-12 flex-column p-0 pr-2">
-                  <div class="value">
-                    <i class="bi bi-flag-fill"></i>
-                    <?php echo  @$row["category"];  ?>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-2">
-              <div class="flex__columns">
-                <div class="col-12 flex-column p-0 pr-2">
-                  <div class="value">
-                    <i class="bi bi-building-fill"></i>
-                    <a rel="alternate" href="" hreflang="en">
-                      <?php echo  @$row["organizer"];  ?>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-4">
-              <div class="flex__columns">
-
-                <div class="col-6 flex-column p-0 pl-2">
-                  <div class="caption-text">
-
-                  </div>
-                  <div class="value"><?php echo  @$row["noise_level"];  ?></div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-4">
-              <div class="flex__columns">
-                <div class="col-6 flex-column p-0 pr-2" style="margin:0px 0px 0px 65px;">
-
-                  <div class="price">
-                    <a rel="alternate" class="track-price" href=" " hreflang="en">
-                      <button style="  width: 150px;height: 45px; font-weight: 900;font-size: 22px;     margin: -5px 0px 0px 120px;">
-                        <?php echo  @$row["price"];  ?>
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
 
