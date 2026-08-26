@@ -1,0 +1,16 @@
+{
+  "name": "initial-d",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sync": "browser-sync start -p ''",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^3.0.2"
+  },
+  "description": ""
+}

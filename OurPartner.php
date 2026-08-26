@@ -220,7 +220,7 @@ include './header.php';
                     <!-- <h2 style=" font-family:myFont;">Search. Book. Drive. Repeat</h2> -->
                 </div>
                 <div class="container" style="margin-top: 55px;">
-                    <div class="carousel-bx2" style="border-radius: 10px;width: 150px;background-color: #fff;
+                    <div class="carousel-bx2" style="border-radius: 10px;width: 175px;background-color: #fff">
 ">
                         <a href="#" style=" color: #ee244e;">Become A Partner</a>
                     </div>
